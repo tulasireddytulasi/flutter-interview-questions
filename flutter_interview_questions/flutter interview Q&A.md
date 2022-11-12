@@ -31,6 +31,7 @@ In the end-to-end process of software testing, Integration Testing will be perfo
 ---
 
 3.How do you monitor errors in flutter?
+
 There are different errors in flutter, like UI errors for ex TextOverFlow error, Network errors like Null point exceptions, SocketException. And to monitor all types of errors we can use sentry package.
 
 ---
@@ -149,7 +150,7 @@ RxDart adds functionality to Dart Streams in three ways: Stream Classes - create
 
 The structure of Flutter consists of three layers:
 
-<img src='../img/flutter_images/flutter_archtecture.jpg' alt="flutter_archtecture"/>
+<img src='https://github.com/tulasireddytulasi/flutter-interview-questions/blob/main/img/flutter_images/flutter_architecture.jpg' alt="async"/>
 
 `Upper layers`: The Dart-based platform that takes care of app widgets, gestures, animations, illustrations, and materials;
 `Flutter engine`: Handles the display and formatting of text.
