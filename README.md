@@ -110,7 +110,10 @@ https://github.com/divyanshub024/Flutter-route-transition
 Async means that this function is asynchronous and you might need to wait a bit to get its result.
 Await literally means - wait here until this function is finished and you will get its return value.
 Future is a type that ‘comes from the future’ and returns value from your asynchronous function. It can complete with success(.then) or with
-an error(.catchError)
+an error(.catchError).
+A future (lower case “f”) is an instance of the Future (capitalized “F”) class. A future represents the result of an asynchronous operation,
+and can have two states: uncompleted or completed.
+Note: Uncompleted is a Dart term referring to the state of a future before it has produced a value.
 
 https://www.youtube.com/watch?v=SmTCmDMi4BY
 
@@ -511,6 +514,7 @@ Tracing is enabled, and tools supporting source-level debugging (such as DevTool
 63.What is the difference between `main` function and the `runApp()` function in Flutter?
 
 In Dart, main() acts as the entry point for the program whereas runApp() attaches the given widget to the screen.
+The runApp() function takes the given Widget and makes it the root of the widget tree. In this example, the widget tree consists of two widgets, the Center widget and its child, the Text widget. The framework forces the root widget to cover the screen, which means the text “Hello, world” ends up centered on screen.
 
 
 ---
