@@ -21,9 +21,11 @@ Auth Middleware | Code is relatively readable, Riverpod provides different kinds
 
 2.what is difference between Unit testing and Widget testing and Integrate and integrated tests instument in flutter?
 
-Unit Testing: It is a type of software testing in which a small piece of code is tested to see if the code works as expected. The name is derived from the fact that tests are done on a unit by unit basis. The goal of Unit testing is to help reduce the cost of bug fixes, as this way, bugs or errors in the code level are identified early in the development lifecycle.
-A widget test verifies the behavior of Flutter widgets without running the app itself.
-Integration testing, as its name implies, verifies that the interface between two software units or modules works correctly. It is a broader type of testing that covers connection between 2 or more moduled and can also in some cases, cover the whole application.
+`Unit Testing`: It is a type of software testing in which a small piece of code is tested to see if the code works as expected. The name is derived from the fact that tests are done on a unit by unit basis. The goal of Unit testing is to help reduce the cost of bug fixes, as this way, bugs or errors in the code level are identified early in the development lifecycle.
+
+`Widget Testing`: The widget test is testing UI components, so it is also called Component Testing. It is used to test a single widget. The main goal of widget testing is to check whether the widget works as expected. A user can write test cases for every widget present in the project.
+
+`Integration Testing`: Integration testing, as its name implies, verifies that the interface between two software units or modules works correctly. It is a broader type of testing that covers connection between 2 or more moduled and can also in some cases, cover the whole application.
 In the end-to-end process of software testing, Integration Testing will be performed after the Unit Testing and before System Testing.
 
  for more details: https://www.practitest.com/qa-learningcenter/resources/unit-test-vs-integration-test
@@ -367,6 +369,39 @@ Used in State Management. Based on publish subscriber method. One provider (publ
 The function notifyChangeListner updated the consumers on any change.
 
 ---
+
+45.what is the spread operator in flutter?
+
+The spread operator is a useful and quick syntax for adding items to arrays, and combining arrays.
+
+The spread operator is simple to use just add … is the beginning and you are good to go.
+
+But you may think why it’s not throwing an error. That’s simple as Column Contains a List<Widget> and spread operator can be used to add an existing List in another List it accepts and understands.
+
+<img src='https://github.com/tulasireddytulasi/flutter-interview-questions/blob/main/img/flutter_images/spread_operator.png' alt="spread_operator"/>
+
+---
+
+46.Explain what a Flutter widget is
+
+A widget is an element of a graphical user interface (GUI) that displays information or provides a specific way for a user to interact with the operating system or an application.
+
+A Flutter app is always considered as a tree of widgets. Whenever you are going to code for building anything in Flutter, it will be inside a widget. Widgets describe how your app view should look like with their current configuration and state.
+
+Widgets are the central class hierarchy in the Flutter framework. A widget is an immutable description of part of a user interface. Widgets can be inflated into elements, which manage the underlying render tree. Widgets themselves have no mutable state (all their fields must be final).
+
+---
+
+47.Explain what the Flutter SDK and Dart SDK is
+
+Flutter is Google's free, open-source software development kit (SDK) for cross-platform mobile application development. Using a single platform-agnostic codebase, Flutter helps developers build high-performance, scalable applications with attractive and functional user interfaces for Android or IOS.
+
+The Dart SDK has the libraries and command-line tools that you need to develop Dart web, command-line, and server apps. To get the Dart SDK, see Get Dart. If you're developing Flutter apps, then you don't need to separately download the Dart SDK; just install Flutter.
+
+---
+
+
+
 
 
 
