@@ -56,6 +56,8 @@ Spacer manages the empty space between the widgets with flex container. Evenly w
 
 What is Hot Reload in Flutter:
 
+Hot reload works by injecting updated source code files into the running Dart VM (Virtual Machine). This doesn’t only add new classes, but also adds methods and fields to existing classes, and changes existing functions.
+
 Flutter hot reload features works with combination of Small r key on command prompt or Terminal. Hot reload feature quickly compile the newly added code in our file and sent the code to Dart Virtual Machine. After done updating the Code Dart Virtual Machine update the app UI with widgets. Hot Reload takes less time then Hot restart. There is also a draw back in Hot Reload, If you are using States in your application then Hot Reload preservers the States so they will not update on Hot Reload our set to their default values
 
 

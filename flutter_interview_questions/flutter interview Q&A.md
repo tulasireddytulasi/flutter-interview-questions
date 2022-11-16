@@ -400,6 +400,28 @@ The Dart SDK has the libraries and command-line tools that you need to develop D
 
 ---
 
+48.What is the difference between AOT and JIT?
+
+Ahead-of-Time (AOT) is a type of compilation that compiles your app at build time.
+Just-in-Time (JIT) is a type of compilation that compiles your app in the browser at runtime.
+
+---
+
+49.How does Flutter run my code on Android?
+
+The engine’s C and C++ code are compiled with Android’s NDK. The Dart code (both the SDK’s and yours) are ahead-of-time (AOT) compiled into native, ARM, and x86 libraries. Those libraries are included in a “runner” Android project, and the whole thing is built into an .apk. When launched, the app loads the Flutter library. Any rendering, input, or event handling, and so on, is delegated to the compiled Flutter and app code. This is similar to the way many game engines work.
+
+During debug mode, Flutter uses a virtual machine (VM) to run its code in order to enable stateful hot reload, a feature that lets you make changes to your running code without recompilation. You’ll see a “debug” banner in the top right-hand corner of your app when running in this mode, to remind you that performance is not characteristic of the finished release app.
+
+for more details: https://docs.flutter.dev/resources/faq
+
+---
+
+50.what is widget testing tools in flutter?
+
+Widget testing tool is real devices or emulators.
+
+---
 
 
 
