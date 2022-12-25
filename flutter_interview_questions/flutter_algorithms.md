@@ -237,3 +237,107 @@ The dfs() function is called with the starting node and performs a DFS traversal
 Alternatively, DFS can also be implemented using a stack data structure to store the nodes that are waiting to be visited, rather than using recursion.
 
 ----
+
+##### 5. What is Knuth-Morris-Pratt (KMP) Algorithm?
+
+The Knuth-Morris-Pratt (KMP) algorithm is a string matching algorithm that is used to find the occurrence of a pattern within a string. It is a faster alternative to the naive string matching algorithm, which checks every possible substring of the text to see if it matches the pattern.
+
+The KMP algorithm uses a table (the "prefix function") to store the length of the longest proper prefix of the pattern that is also a suffix of the pattern. This table is used to skip over sections of the text that are known not to match the pattern, allowing the algorithm to run in linear time.
+
+Here is an example of how the KMP algorithm could be implemented in Dart:
+
+```dart
+int kmp(String text, String pattern) {
+  // compute the prefix function
+  var prefix = List<int>(pattern.length);
+  prefix[0] = 0;
+  for (var i = 1; i < pattern.length; i++) {
+    var j = prefix[i - 1];
+    while (j > 0 && pattern[j] != pattern[i]) {
+      j = prefix[j - 1];
+    }
+    if (pattern[j] == pattern[i]) {
+      j++;
+    }
+    prefix[i] = j;
+  }
+
+  // search for the pattern in the text
+  var j = 0;
+  for (var i = 0; i < text.length; i++) {
+    while (j > 0 && pattern[j] != text[i]) {
+      j = prefix[j - 1];
+    }
+    if (pattern[j] == text[i]) {
+      j++;
+    }
+    if (j == pattern.length) {
+      // the pattern was found at index i - pattern.length + 1
+      return i - pattern.length + 1;
+    }
+  }
+
+  // the pattern was not found
+  return -1;
+}
+
+```
+
+In this example, the `kmp()` function takes a text string and a pattern string as input and returns the index at which the pattern first occurs in the text, or -1 if the pattern is not found. It first computes the prefix function for the pattern, and then it searches for the pattern in the text by iterating over the characters of the text and using the prefix function to skip over sections of the pattern that are known not to match. If a match is found, the function returns the index at which the match starts. If the pattern is not found, the function returns.
+
+----
+
+##### 6. What is Naive string matching Algorithm?
+
+The naive string matching algorithm is a simple method for finding the occurrence of a pattern within a string. It checks every possible substring of the text to see if it matches the pattern.
+
+Here is an example of how the naive string matching algorithm could be implemented in Dart:
+
+```dart
+int naiveStringMatch(String text, String pattern) {
+  for (var i = 0; i <= text.length - pattern.length; i++) {
+    if (text.substring(i, i + pattern.length) == pattern) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+```
+
+In this example, the naiveStringMatch() function takes a text string and a pattern string as input and returns the index at which the pattern first occurs in the text, or -1 if the pattern is not found. It iterates over the characters of the text and checks if the substring starting at the current position and ending at the end of the pattern matches the pattern. If a match is found, the function returns the index at which the match starts. If the pattern is not found, the function returns -1.
+
+While the naive string matching algorithm is simple to implement, it has a worst-case time complexity of O(n*m), where n is the length of the text and m is the length of the pattern. This makes it less efficient than other string matching algorithms, such as the Knuth-Morris-Pratt (KMP) algorithm or the Boyer-Moore algorithm, which have a worst-case time complexity of O(n).
+
+----
+
+##### 7. What is Hash function Algorithm?
+
+A hash function is a function that maps a set of input values (called keys) to a fixed-size set of integer values (called hash values or hash codes). Hash functions are used to implement data structures such as hash tables, which provide efficient lookup and insertion of data.
+
+Here is an example of how a simple hash function for strings could be implemented in Dart:
+
+```dart
+int hash(String key, int modulus) {
+  var hash = 0;
+  for (var i = 0; i < key.length; i++) {
+    hash = (hash * 31 + key.codeUnitAt(i)) % modulus;
+  }
+  return hash;
+}
+```
+
+In this example, the `hash()` function takes a string key and an integer modulus as input and returns the hash value of the key modulo the modulus. It computes the hash value by iterating over the characters of the key and using the "multiplication by 31" method to combine the hash value of the previous characters with the current character. The modulus is used to reduce the hash value to a fixed size.
+
+There are many different ways to implement hash functions, and the choice of a specific hash function depends on the specific requirements of the application. Some factors to consider when choosing a hash function include the distribution of the hash values, the collision rate (the number of keys that map to the same hash value), and the efficiency of the hashing algorithm.
+
+-----
+
+
+
+
+
+
+
+
+
