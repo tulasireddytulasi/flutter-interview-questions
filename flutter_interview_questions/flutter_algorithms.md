@@ -249,7 +249,7 @@ Here is an example of how the KMP algorithm could be implemented in Dart:
 ```dart
 int kmp(String text, String pattern) {
   // compute the prefix function
-  var prefix = List<int>(pattern.length);
+  var prefix = List.filled(pattern.length, 0);
   prefix[0] = 0;
   for (var i = 1; i < pattern.length; i++) {
     var j = prefix[i - 1];
