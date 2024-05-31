@@ -1,0 +1,83 @@
+# Flutter Async Questions:
+
+These concepts form the basis for understanding and implementing Async Operations, enabling developers to create responsive and efficient applications.
+
+##### 1. What is Stream?
+A **stream** is like a pipe, you put a value on the one end and if there’s a listener on the other end that listener will receive that value. A Stream can have multiple listeners and all of those listeners will receive the same value when it’s put in the pipeline. The way you put values on a stream is by using a **StreamController**.
+
+--------
+
+##### 2. What is Future?
+In Dart, a future is an instance of the **Future** class that represents the result of an asynchronous operation. **Asynchronous** operations are delayed operations that can't provide an immediate result, such as reading a file, querying a database, or fetching data over a network. A future can have two states:
+- **Uncompleted**: The future is in this state before it has produced a value.
+- **Completed**: The future completes with a value if the asynchronous operation succeeds, or with an error if it fails. 
+
+--------
+
+##### 3. Stream vs Future?
+The difference is that Futures are about one-shot request/response (I ask, there is a delay, I get a notification that my Future is ready to collect, and I'm done!) whereas Streams are a continuous series of responses to a single request (I ask, there is a delay, then I keep getting responses until the stream dries up or I decide to close it and walk away).
+
+--------
+
+##### 4. What is Stream Builder?
+In Flutter, a **StreamBuilder** is a widget that acts as a bridge between a data stream and the user interface (UI). It listens to events from streams, rebuilds itself for upcoming events, and displays real-time data in apps. For example, you can use a StreamBuilder in chatting apps or real-time stock trading apps.
+
+--------
+
+##### 5. What is Future Builder?
+ FutureBuilder is a widget in Flutter that can handle different widget states based on the resolution of a Future. It can be used to run asynchronous functions and update the user interface (UI) based on the function's output. FutureBuilder can also eliminate the need for manual management of Future states, such as handling loading indicators or error messages.
+
+--------
+
+##### 6. What is Async and await ?
+**Async/await** is a feature in Dart that allows us to write asynchronous code that looks and behaves like synchronous code, making it easier to read.
+
+When a function is marked **async**, it signifies that it will carry out some work that could take some time and will return a Future object that wraps the result of that work.
+
+The **await** keyword, on the other hand, allows you to delay the execution of an async function until the awaited Future has finished. This enables us to create code that appears to be synchronous but is actually asynchronous.
+
+The **async** and **await** keywords both provide a declarative way to define an asynchronous function and use their results. You can use the **async** keyword before a function body to make it asynchronous. You can use the **await** keyword to get the completed result of an asynchronous expression.
+
+--------
+
+##### 7. What is Async*?
+- **async* ** gives you a Stream
+
+**Async*** is used to create a function that returns a bunch of future values one at a time. Each result is wrapped in a Stream.
+
+--------
+
+##### 8. What is yeild?
+**yield** adds a value to the output stream of the surrounding async* function. It's like return , but does not terminate the function.
+
+--------
+
+##### 9. What is diff b/w  Async and Async* ?
+- **async** gives you a Future
+- **async* ** gives you a Stream
+
+**Async** functions execute synchronously until they reach the await keyword. Therefore, all synchronous code within an async function body executes immediately. 
+
+**Async*** is used to create a function that returns a bunch of future values one at a time. Each result is wrapped in a Stream.
+
+--------
+
+##### 10. What is Event lopps?
+
+The Event Loop is a mechanism that continuously checks and processes events and tasks in a loop, allowing Dart to handle asynchronous operations without blocking the main thread.
+Key points:
+
+1. Dart is single-threaded, executing one task at a time on the main thread.
+2. Asynchronous operations are added to an Event Queue.
+3. The Event Loop repeatedly checks the Event Queue and processes tasks one by one.
+4. Microtask Queue holds scheduled tasks that execute before the next Event Queue task.
+5. Ensures responsiveness by preventing the main thread from being blocked.
+6. Supports asynchronous operations like Futures and Streams.
+
+Understanding the Event Loop is crucial for writing efficient, non-blocking code and managing asynchronous operations effectively in Dart.
+
+--------
+
+
+
+
