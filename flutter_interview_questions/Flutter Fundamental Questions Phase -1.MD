@@ -35,6 +35,13 @@ UI elements, and when a widget's state changes, Flutter creates a new instance o
 compares it with the previous one, and efficiently updates the render tree with the necessary
 changes.
 
+When a Flutter app starts, the main() function calls runApp(app) with a widget, which becomes the
+root of the widget tree. The widget then asks the framework to create an element, and the element
+asks the framework to create a render object. The render object tree holds the information for the
+layout and painting process, including size and layout. The render objects are responsible for the
+final look and shape of the UI, including the pixels that are drawn on the screen.
+
+
 --------
 
 ##### 5. What is widget tree, Element tree, Render tree?
@@ -120,11 +127,48 @@ understanding the present layout and diagnoses various layout issues.
 ##### 9. What are 3 layers of Flutter?
 
 Upper layers: The Dart-based platform that takes care of app widgets, gestures, animations,
-illustrations, and materials;
+illustrations, and materials.
 Flutter engine: Handles the display and formatting of text.
 Built-in service: Used for the management of plugins, packages, and event loops.
 
 ------------
 
+##### 10. What are Material Design?
 
+Material Design is an open-source design system built and supported by Google designers and
+developers. It allows you to customize your app's theme in Flutter, including its color scheme,
+typography, and shapes. You can use the ThemeData class to store the color and typography values for
+a material design theme, and then pass it to the MaterialApp widget to customize your app's
+appearance.
 
+##### 10. What are new features in 3.19 and 3.22 flutter version?
+
+https://shirsh94.medium.com/whats-new-in-flutter-3-22-let-s-discuss-the-top-10-new-things-03f6d12eed38
+https://shirsh94.medium.com/whats-new-in-flutter-3-19-let-s-discuss-the-top-11-features-bcbda25500ba
+
+The new features in 3.19 are below:
+
+- Gemini AI Flutter Plugin
+- Scrolling Improvements
+- AnimationStyle Widget
+- Adaptive Switch
+- improves accessibility and text field functionality
+- Impeller Progress
+- Deep linking Web Validator
+- Windows Arm64 Support
+- Performance Optimizations
+- Dev-Tools Updates
+- Flutter iOS Native Fonts
+
+The new features in 3.22 are below:
+
+- WebAssembly Support: Improved web app performance.
+- Vulkan Backend for Impeller: Better graphics and performance on Android.
+- Widget State Properties: Easier widget state management.
+- Dynamic View Sizing: Improved responsiveness for layouts.
+- Improved Form Validation: Enhanced user input handling.
+- Flavor-Conditional Asset Bundling: Selective asset bundling for different app flavors.
+- Gradle Kotlin DSL Support: Better Gradle build script editing.
+- Platform View Performance Improvements (iOS): Smoother platform views on iOS.
+- Vertex AI for Firebase Dart SDK Preview: AI features for Dart and Flutter apps.
+- Google Mobile Ads SDK 5.0.1: Enhanced ad monetization features.
