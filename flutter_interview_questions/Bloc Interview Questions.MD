@@ -1,6 +1,6 @@
-# Flutter Bloc Questions:
+# Flutter Bloc Pattern Questions:
 
-### IntroductionIntroduction
+### Introduction
 
 **Flutter Bloc** is a state management library for the Flutter framework that helps developers organise and manage application states reactively and efficiently. It follows the **Business Logic Component (BLoC)** pattern, separating business logic from the UI layer.
 
