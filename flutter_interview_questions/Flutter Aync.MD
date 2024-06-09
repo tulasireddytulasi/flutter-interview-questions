@@ -78,6 +78,31 @@ Understanding the Event Loop is crucial for writing efficient, non-blocking code
 
 --------
 
+##### 11. Diff b/w Future and Isolate?
+
+A **Future** represents the result of an asynchronous operation, while an **Isolate** is a separate execution thread for parallel processing.
+**Futures** are used for handling asynchronous tasks like network requests or file I/O without blocking the main thread. **Isolates** are used for running computationally intensive tasks in parallel or offloading work from the main thread.
+
+The key differences are:
+- Futures use the same memory space, Isolates have separate memory heaps.
+- Futures communicate by passing values, Isolates use message passing.
+- Futures are for asynchronous programming, Isolates are for parallel programming.
+
+------------
+
+##### 12. What will happen in background when you use Future?
+
+When you use a Future in Dart, the asynchronous operation it represents is executed on a separate thread or event loop in the background. This allows the main thread (or UI thread in Flutter) to continue executing other code without being blocked.
+
+The key points are:
+
+- Asynchronous operation runs on a separate thread/event loop in the background.
+- Main thread remains unblocked and responsive.
+- Callbacks registered with the Future execute on the main thread once the operation completes.
+- This ensures smooth UI experience in Flutter by preventing main thread blocking.
+
+------------
+
 
 
 
