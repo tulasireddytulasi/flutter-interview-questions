@@ -168,30 +168,30 @@ organization, and making apps more maintainable.
 
 1. **What is the purpose of BLoC in Flutter?**
 
-The purpose of BLoC in Flutter is to manage and separate business logic, events, and states,
+ The purpose of BLoC in Flutter is to manage and separate business logic, events, and states,
 enhancing code modularity and testability for a reactive UI.
 
 2. **Which state management is best in Flutter?**
 
-There's no one-size-fits-all. Bloc is popular for complex apps, while Provider and Riverpod are
+ There's no one-size-fits-all. Bloc is popular for complex apps, while Provider and Riverpod are
 simpler. Choose based on project needs.
 
 3. **Is Bloc better than GetX?**
 
-"Better" depends on context. Bloc is widely used for its structure, while GetX is praised for
+ "Better" depends on context. Bloc is widely used for its structure, while GetX is praised for
 simplicity and performance. Choose based on project requirements and developer preferences.
 
 4. **What is the difference between Cubit and Bloc?**
 
-Cubit is a subset of the BLoC Pattern package that does not rely on events and instead uses methods
+ Cubit is a subset of the BLoC Pattern package that does not rely on events and instead uses methods
 to emit new states.
 
 So, we can use Cubit for simple states, and as needed we can use the Bloc.
 
-There are many advantages of choosing Cubit over Bloc. The two main benefits are:
+ There are many advantages of choosing Cubit over Bloc. The two main benefits are:
 
-Cubit is a subset of Bloc; so, it reduces complexity. Cubit eliminates the event classes. Cubit uses
-emit rather than yield to emit state. Since emit works synchronously, you can ensure that the state
+ Cubit is a subset of Bloc; so, it reduces complexity. Cubit eliminates the event classes. Cubit 
+ uses emit rather than yield to emit state. Since emit works synchronously, you can ensure that the state
 is updated in the next line.
 
 ------------
