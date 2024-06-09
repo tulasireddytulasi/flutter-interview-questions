@@ -181,6 +181,19 @@ simpler. Choose based on project needs.
 "Better" depends on context. Bloc is widely used for its structure, while GetX is praised for
 simplicity and performance. Choose based on project requirements and developer preferences.
 
+4. **What is the difference between Cubit and Bloc?**
+
+Cubit is a subset of the BLoC Pattern package that does not rely on events and instead uses methods
+to emit new states.
+
+So, we can use Cubit for simple states, and as needed we can use the Bloc.
+
+There are many advantages of choosing Cubit over Bloc. The two main benefits are:
+
+Cubit is a subset of Bloc; so, it reduces complexity. Cubit eliminates the event classes. Cubit uses
+emit rather than yield to emit state. Since emit works synchronously, you can ensure that the state
+is updated in the next line.
+
 ------------
 
 **Conclusion**
