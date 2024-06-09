@@ -213,6 +213,9 @@ learnt the basic implementation of the BLoC pattern using the Flutter BLoC libra
 https://github.com/tulasireddytulasi/flutter_bloc_project
 https://github.com/felangel/bloc/tree/master/examples
 https://github.com/felangel/bloc/tree/master/examples/flutter_shopping_cart
+https://sahasuthpala.medium.com/flutter-bloc-unit-testing-f3fdd195eff8
+https://www.ics.com/blog/how-conduct-unit-tests-using-bloc
+https://hackernoon.com/the-ultimate-guide-to-flutter-bloc-state-management-and-testing
 
 #### 1. What is Unit Testing?
 
