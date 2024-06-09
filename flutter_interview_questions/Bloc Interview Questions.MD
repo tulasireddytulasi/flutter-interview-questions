@@ -193,6 +193,92 @@ learnt the basic implementation of the BLoC pattern using the Flutter BLoC libra
 
 ------------
 
+#### Unit Testing
+
+------------
+
+#### 1. What is Unit Testing?
+
+Unit testing is a software testing technique that involves testing individual units or components of
+a software system to verify their correctness. In Flutter, unit tests are typically written using
+the **test** package provided by the Dart ecosystem. Here's an example:
+
+```dart
+import 'package:flutter_test/flutter_test.dart';
+
+// Function to test
+int add(int a, int b) {
+  return a + b;
+}
+
+void main() {
+  test('adds two positive integers correctly', () {
+    expect(add(2, 3), equals(5));
+  });
+
+  test('adds two negative integers correctly', () {
+    expect(add(-2, -3), equals(-5));
+  });
+
+  test('adds zero correctly', () {
+    expect(add(0, 5), equals(5));
+    expect(add(5, 0), equals(5));
+  });
+}
+```
+
+In this example, we have a simple add function that takes two integers and returns their sum. We
+then define three test cases using the test function from the flutter_test package. Each test case
+calls the add function with different inputs and asserts the expected output using the expect
+function.
+
+------------
+
+#### 2. What is BLoC Testing?
+
+BLoC (Business Logic Component) is a design pattern used in Flutter for separating the presentation
+layer from the business logic. Testing BLoCs involves testing the state management and event
+handling logic. Here's an example:
+
+```dart
+import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:my_app/blocs/counter_bloc.dart';
+
+void main() {
+  group('CounterBloc', () {
+    CounterBloc counterBloc;
+
+    setUp(() {
+      counterBloc = CounterBloc();
+    });
+
+    tearDown(() {
+      counterBloc?.close();
+    });
+
+    test('initial state is 0', () {
+      expect(counterBloc.state, equals(0));
+    });
+
+    blocTest(
+      'emits [1] when CounterIncremented is added',
+      build: () => CounterBloc(),
+      act: (bloc) => bloc.add(CounterIncremented()),
+      expect: [equals(1)],
+    );
+  });
+}
+```
+
+In this example, we're testing the **CounterBloc** using the **bloc_test** package. We define a *
+*group** to organize our tests, and within it, we set up and tear down the **CounterBloc** instance
+for each test case.
+
+The first test case verifies that the initial state of the **CounterBloc** is 0. The second test
+case uses the **blocTest** function to test the behavior of the **CounterBloc** when a *
+*CounterIncremented** event is added. It expects the state to be emitted as 1.
+
 
 
 
