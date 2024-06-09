@@ -197,6 +197,10 @@ learnt the basic implementation of the BLoC pattern using the Flutter BLoC libra
 
 ------------
 
+https://github.com/tulasireddytulasi/flutter_bloc_project
+https://github.com/felangel/bloc/tree/master/examples
+https://github.com/felangel/bloc/tree/master/examples/flutter_shopping_cart
+
 #### 1. What is Unit Testing?
 
 Unit testing is a software testing technique that involves testing individual units or components of
