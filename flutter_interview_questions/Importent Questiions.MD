@@ -153,8 +153,52 @@ direct access to specific content within your app. It's important to configure d
 correctly for both Android and iOS platforms to ensure a seamless experience across different
 devices and platforms.
 
+------------
 
+#### 2. What is dependency Injection in flutter and give example
 
+**Dependency Injection** (DI) is a software design pattern that allows you to decouple the creation
+and management of object dependencies from the objects themselves. In Flutter, DI is often used to
+provide instances of classes or services to other parts of the application that require them,
+without those parts having to create or manage those dependencies directly.
+
+There are several ways to implement **Dependency Injection** in Flutter, but one common approach is
+to use a package like **get_it** or **injectable**.
+
+------------
+
+#### 3. How to Implement Flavours in Flutter?
+
+https://www.mouritech.com/it-technical-articles/implementing-flutter-flavors-for-android-ios-applications/
+
+**Android (app/build.gradle)**:
+
+    android {
+        flavorDimensions "default"
+        productFlavors {
+            sit {
+                dimension "default"
+                resValue "string","app_name","Karkinos SIT"
+                applicationIdSuffix ".sit"
+                flutter.target "lib/main_sit.dart"
+            }
+            qa {
+                dimension "default"
+                resValue "string","app_name","Karkinos QA"
+                applicationIdSuffix ".qa"
+                flutter.target "lib/main_qa.dart"
+            }
+            prod {
+                dimension "default"
+                resValue "string","app_name","Karkinos"
+                applicationIdSuffix ""
+                flutter.target "lib/main_prod.dart"
+            }
+        }
+        namespace 'com.karkinos'
+    }
+
+------------
 
 
 
