@@ -90,7 +90,7 @@ Here, **PaymentGateway** can be extended with new payment methods without modify
 correctness of the program.
 
 - The LSP states that a subclass should be able to replace its parent class without affecting the
-  correctness of the program8 This means that the subclass should be able to implement all the
+  correctness of the program. This means that the subclass should be able to implement all the
   methods of the parent class and behave in the same way as parent class.
 
 - **Example**: Suppose we have a class called **Animal** and its subclass called Dog. If we have a
