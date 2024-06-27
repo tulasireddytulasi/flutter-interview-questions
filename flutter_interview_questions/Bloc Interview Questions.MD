@@ -194,6 +194,31 @@ So, we can use Cubit for simple states, and as needed we can use the Bloc.
  uses emit rather than yield to emit state. Since emit works synchronously, you can ensure that the state
 is updated in the next line.
 
+5. **In Flutter Bloc when we abstract classes why we need sealed classes for events and states?**
+
+In Flutter BLoC (Business Logic Component) architecture, we use sealed classes for events and states
+for two main reasons: code safety and discoverability.
+
+1. **Code Safety**:
+   Sealed classes in Dart are abstract classes that cannot be extended outside of their defining
+   library. This means that if you have a sealed class called `MyEvent` in your project, no other
+   part of the codebase can create a new subclass of `MyEvent` without being explicitly allowed to
+   do so.
+
+   This restriction provides code safety by preventing developers from accidentally creating new
+   event or state types that the BLoC wasn't designed to handle. By limiting the creation of event
+   and state types to the BLoC's own library, you ensure that the BLoC can handle all possible
+   events and states correctly.
+
+2. **Discoverability**:
+   Sealed classes also improve code discoverability and maintainability. When you look at a BLoC's
+   code, you can easily find all the possible events and states it can handle by looking at the
+   subclasses of the sealed `Event` and `State` classes.
+
+   Without sealed classes, events and states could be defined anywhere in the codebase, making it
+   harder to understand the BLoC's behavior and potentially leading to missing or duplicated
+   event/state types.
+
 ------------
 
 **Conclusion**

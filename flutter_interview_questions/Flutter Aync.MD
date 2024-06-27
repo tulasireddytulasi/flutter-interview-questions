@@ -84,7 +84,7 @@ expression.
 
 ##### 7. What is Async*?
 
-- **async* ** gives you a Stream
+- **async*** gives you a Stream
 
 **Async*** is used to create a function that returns a bunch of future values one at a time. Each
 result is wrapped in a Stream.
