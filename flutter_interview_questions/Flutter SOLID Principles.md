@@ -133,7 +133,7 @@ void main() {
 
 The **Dog** class can replace the **Animal** class without affecting the program's correctness.
 
-## 4. Liskov Substitution Principle (LSP)
+## 4. Interface Segregation Principle (ISP)
 
 **Definition:** Clients should not be forced to depend on interfaces they do not use.
 
