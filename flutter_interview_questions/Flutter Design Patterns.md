@@ -2,8 +2,7 @@
 
 Design patterns are typical solutions to common problems in software design. They provide templates on how to solve problems and can speed up the development process by providing tested, proven development paradigms. Design patterns are usually divided into three main categories:
 
-<img src='https://github.com/tulasireddytulasi/flutter-interview-questions/blob/main/img/flutter_images
-/types_of_patterns.png' alt="Types of Deign Patterns"/>
+<img src='https://github.com/tulasireddytulasi/flutter-interview-questions/blob/main/img/flutter_images/types_of_patterns.png' alt="Types of Deign Patterns"/>
 
 ## 1. Creational Patterns
 Creational patterns deal with object creation mechanisms, aiming to create objects in a manner suitable to the situation. They help make a system independent of how its objects are created, composed, and represented.
