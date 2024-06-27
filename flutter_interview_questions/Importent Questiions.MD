@@ -274,48 +274,21 @@ responses are handled consistently and cleanly across their Flutter applications
 
 ##### 6. What is the difference between http and Dio package?
 
-Here's a concise comparison between the http and Dio packages in Flutter:
+Certainly! Here's the comparison between http and Dio packages in a table format:
 
-1. Features:
-    - http: Basic, lightweight, part of Dart's standard library
-    - Dio: Feature-rich, supports more advanced use cases
-
-2. Interceptors:
-    - http: Not built-in
-    - Dio: Supports request/response interceptors
-
-3. Request cancellation:
-    - http: Not supported natively
-    - Dio: Supports request cancellation
-
-4. Timeout handling:
-    - http: Basic timeout support
-    - Dio: More advanced timeout options
-
-5. File uploading:
-    - http: Basic support
-    - Dio: More robust file upload capabilities
-
-6. Download tracking:
-    - http: Not built-in
-    - Dio: Supports download progress tracking
-
-7. Error handling:
-    - http: Basic error types
-    - Dio: More detailed error information
-
-8. Transformers:
-    - http: Not built-in
-    - Dio: Supports request/response transformers
-
-9. Configuration:
-    - http: Minimal configuration options
-    - Dio: Highly configurable (base options, etc.)
-
-10. Learning curve:
-
-- http: Simpler, easier for beginners
-- Dio: More complex, but powerful for advanced use cases
+| Feature | http | Dio |
+|---------|------|-----|
+| Complexity | Basic, lightweight | Feature-rich, advanced |
+| Part of | Dart standard library | Third-party package |
+| Interceptors | Not built-in | Supported |
+| Request cancellation | Not supported natively | Supported |
+| Timeout handling | Basic | Advanced options |
+| File uploading | Basic support | Robust capabilities |
+| Download tracking | Not built-in | Supported |
+| Error handling | Basic error types | Detailed error information |
+| Transformers | Not built-in | Supported |
+| Configuration | Minimal options | Highly configurable |
+| Learning curve | Simpler, beginner-friendly | More complex, powerful |
 
 In summary, http is simpler and sufficient for basic needs, while Dio offers more features and
 flexibility for complex networking requirements.
