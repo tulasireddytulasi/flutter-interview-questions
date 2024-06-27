@@ -5,6 +5,12 @@ developers to create responsive and efficient applications.
 
 ##### 1. What is Stream?
 
+A **stream** is a sequence of asynchronous events, and it allows the components of your
+application to communicate without blocking the execution. And they also allow for real-time updates
+and reactive programming, which can help developers create responsive and interactive applications.
+Streams are crucial for handling user input, network requests, and other asynchronous tasks in a
+Flutter application.
+
 A **stream** is like a pipe, you put a value on the one end and if there’s a listener on the other
 end that listener will receive that value. A Stream can have multiple listeners and all of those
 listeners will receive the same value when it’s put in the pipeline. The way you put values on a
@@ -146,6 +152,16 @@ The key points are:
 - Main thread remains unblocked and responsive.
 - Callbacks registered with the Future execute on the main thread once the operation completes.
 - This ensures smooth UI experience in Flutter by preventing main thread blocking.
+
+------------
+
+##### 13. What is emit in Flutter?
+
+**emits** function Null safety
+
+Returns a StreamMatcher for matcher . If matcher is already a StreamMatcher, it's returned as-is. If
+it's any other Matcher, this matches a single event that matches that matcher. If it's any other
+Object, this matches a single event that's equal to that object.
 
 ------------
 
