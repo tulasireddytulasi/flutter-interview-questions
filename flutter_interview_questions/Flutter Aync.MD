@@ -66,6 +66,11 @@ behaves like synchronous code, making it easier to read.
 When a function is marked **async**, it signifies that it will carry out some work that could take
 some time and will return a Future object that wraps the result of that work.
 
+the **async** keyword marks a function as asynchronous, which means that the program will run
+independently of the function, even if it takes time to complete. Asynchronous functions return a
+**Future** to indicate that their result is not immediately available. The **await** keyword is 
+used to pause the execution of the function until the awaited **Future** completes.
+
 The **await** keyword, on the other hand, allows you to delay the execution of an async function
 until the awaited Future has finished. This enables us to create code that appears to be synchronous
 but is actually asynchronous.
