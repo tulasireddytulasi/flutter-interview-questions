@@ -121,7 +121,7 @@ state, update the model based on the action's on a View, and trigger events on t
 Flutter, we have a listener called `ChangeNotifier` that allows ViewModel to inform or update the
 View whenever the data get updated.
 
-##### The ViewModel has two responsibilitiesThe ViewModel has two responsibilities:
+##### The ViewModel has two responsibilities:
 
 - it reacts to user inputs (e.g., by changing the model, initiating network requests, or routing to
   different screens)
