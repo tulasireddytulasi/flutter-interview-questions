@@ -162,6 +162,9 @@ and management of object dependencies from the objects themselves. In Flutter, D
 provide instances of classes or services to other parts of the application that require them,
 without those parts having to create or manage those dependencies directly.
 
+**Dependency Injection** (DI) is a programming technique in which instances of depedencies such as
+Object or Function is passed into the class. Create loosely coupled application.
+
 There are several ways to implement **Dependency Injection** in Flutter, but one common approach is
 to use a package like **get_it** or **injectable**.
 
