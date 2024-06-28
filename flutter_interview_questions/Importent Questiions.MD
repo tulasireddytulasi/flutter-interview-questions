@@ -407,3 +407,141 @@ quality, more reliable code.
 
 ------------
 
+##### 11. How to implement Push Notification in Flutter?
+
+In Flutter, push notifications are typically implemented using Firebase Cloud Messaging (FCM) or Apple Push Notification Service (APNs). The key steps include setting up FCM/APNs, initializing the messaging plugin, requesting user permissions, retrieving the device token, handling foreground/background notifications, and optionally, handling notification taps.
+
+------------
+
+##### 12. How to get the Device Token and send Push Notifications to iOS?
+
+To get the device token for FCM, use the **getToken()** method from the **firebase_messaging** plugin. For iOS, you need to set up APNs by creating an Apple Developer Account, generating an APNs Authentication Key, and configuring it in the Firebase Console. Request the necessary permissions in your Flutter app, handle the APNs token from the **onTokenRefresh** stream, and implement background notification handling. Send push notifications using the Firebase Console, server-side code, or a third-party service.
+
+------------
+
+##### 13. How to implement Localization in Flutter?
+
+Flutter provides built-in support for localization, making it easier to create apps that support multiple languages and regions. Here's a high-level overview of how localization works in Flutter:
+
+1. Define your app's supported locales (e.g., **en_US**, **es_ES**, **fr_FR**).
+2. Create separate **arb** (Application Resource Bundle) files for each locale, containing the translated strings.
+3. Use the **MaterialApp** or **CupertinoApp** widget and provide the **supportedLocales** and **localizationsDelegates** properties.
+4. Access the translated strings using the **AppLocalizations.of(context).yourString** syntax.
+
+Flutter also provides APIs for handling localized dates, numbers, and other format
+ted values.
+
+------------
+
+##### 14. What is Custom painters? and How to Implement? Give example
+
+Custom painters in Flutter allow you to create custom drawings and graphics by directly manipulating the canvas. They are useful for creating unique UI elements, custom shapes, or complex animations that can't be easily achieved with standard widgets.
+
+To implement a custom painter:
+
+1. Create a class that extends `CustomPainter`.
+2. Override the `paint()` method to define your drawing logic.
+3. Override the `shouldRepaint()` method to optimize repainting.
+4. Use the `CustomPaint` widget to display your custom painter.
+
+Here's an example of a custom painter that draws a simple smiley face:
+
+```dart
+import 'package:flutter/material.dart';
+
+class SmileyPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = Colors.yellow
+      ..style = PaintingStyle.fill;
+
+    // Draw face
+    canvas.drawCircle(
+      Offset(size.width / 2, size.height / 2),
+      size.width / 2,
+      paint,
+    );
+
+    // Draw eyes
+    paint.color = Colors.black;
+    canvas.drawCircle(
+      Offset(size.width * 0.3, size.height * 0.4),
+      size.width * 0.1,
+      paint,
+    );
+    canvas.drawCircle(
+      Offset(size.width * 0.7, size.height * 0.4),
+      size.width * 0.1,
+      paint,
+    );
+
+    // Draw smile
+    paint.style = PaintingStyle.stroke;
+    paint.strokeWidth = 10;
+    canvas.drawArc(
+      Rect.fromCircle(
+        center: Offset(size.width / 2, size.height / 2),
+        radius: size.width * 0.4,
+      ),
+      0.2,
+      2.7,
+      false,
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(SmileyPainter oldDelegate) => false;
+}
+
+class SmileyFaceWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: Size(200, 200),
+      painter: SmileyPainter(),
+    );
+  }
+}
+
+// Usage in your app
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Custom Painter Example')),
+        body: Center(
+          child: SmileyFaceWidget(),
+        ),
+      ),
+    );
+  }
+}
+```
+
+In this example:
+
+1. `SmileyPainter` extends `CustomPainter` and overrides the `paint()` method to draw a smiley face using various canvas drawing methods.
+
+2. The `paint()` method uses the `Canvas` object to draw shapes and the `Size` object to determine the dimensions of the drawing area.
+
+3. `shouldRepaint()` returns `false` because this simple smiley face doesn't need to be redrawn unless explicitly told to do so.
+
+4. `SmileyFaceWidget` is a stateless widget that uses `CustomPaint` to display the `SmileyPainter`.
+
+5. In the `MyApp` widget, we use `SmileyFaceWidget` to display the custom-painted smiley face.
+
+Custom painters are powerful for creating unique visual elements, but they can be performance-intensive if not optimized properly. Use them judiciously and always consider performance implications, especially for complex drawings or animations.
+
+------------
+
+
+
+
+
+
+
+
+
