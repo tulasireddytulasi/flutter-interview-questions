@@ -34,10 +34,29 @@ String removeDuplicates(String str) {
   return result.toString(); // Convert StringBuffer to String
 }
 
+List<T> removeDuplicates2<T>(List<T> list) {
+  List<T> result = []; // List to store result
+
+  for (T element in list) {
+    if (!result.contains(element)) {
+      // Add element to result list if it's not already in the list
+      result.add(element);
+    }
+  }
+
+  return result;
+}
+
 void main() {
   String str = "programming";
   String uniqueStr = removeDuplicates(str);
   print("String after removing duplicates: $uniqueStr");
+
+  // Method 2
+  List<int> numbers = [1, 2, 3, 2, 4, 1, 5];
+  List<int> uniqueNumbers = removeDuplicates2(numbers);
+  print("Original No list: $numbers");
+  print("List after removing duplicates: $uniqueNumbers");
 }
 
 // ### Explanation:
