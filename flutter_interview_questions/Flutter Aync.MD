@@ -18,7 +18,26 @@ stream is by using a **StreamController**.
 
 --------
 
-##### 2. What is Future?
+##### 2. What are different types of Streams in dart?
+
+In Dart, there are two main types of streams:
+
+1. **Single-Subscription Stream**:
+   - **Description**: This type of stream can only be listened to by a single subscriber. Once the stream is consumed, it cannot be reused by other listeners.
+   - **Usage**: Suitable for scenarios where the data is consumed once, such as reading data from a file or processing a single event.
+   - **Example**: `Stream.fromIterable([1, 2, 3])` creates a single-subscription stream that emits a sequence of numbers.
+
+2. **Broadcast Stream**:
+   - **Description**: This type of stream allows multiple subscribers to listen to the same stream concurrently. Each listener receives the same events independently.
+   - **Usage**: Useful when you want multiple parts of your application to react to the same stream of data or events, such as broadcasting user actions or notifications.
+   - **Example**: `StreamController.broadcast()` creates a broadcast stream that can have multiple listeners.
+
+Each type of stream serves different use cases, with single-subscription streams being ideal for single-use scenarios and broadcast streams suited for multi-use scenarios.
+
+--------
+
+
+##### 3. What is Future?
 
 In Dart, a future is an instance of the **Future** class that represents the result of an
 asynchronous operation. **Asynchronous** operations are delayed operations that can't provide an
@@ -31,7 +50,7 @@ future can have two states:
 
 --------
 
-##### 3. Stream vs Future?
+##### 4. Stream vs Future?
 
 The difference is that Futures are about one-shot request/response (I ask, there is a delay, I get a
 notification that my Future is ready to collect, and I'm done!) whereas Streams are a continuous
@@ -40,7 +59,7 @@ until the stream dries up or I decide to close it and walk away).
 
 --------
 
-##### 4. What is Stream Builder?
+##### 5. What is Stream Builder?
 
 In Flutter, a **StreamBuilder** is a widget that acts as a bridge between a data stream and the user
 interface (UI). It listens to events from streams, rebuilds itself for upcoming events, and displays
@@ -49,7 +68,7 @@ trading apps.
 
 --------
 
-##### 5. What is Future Builder?
+##### 6. What is Future Builder?
 
 FutureBuilder is a widget in Flutter that can handle different widget states based on the resolution
 of a Future. It can be used to run asynchronous functions and update the user interface (UI) based
@@ -58,7 +77,7 @@ states, such as handling loading indicators or error messages.
 
 --------
 
-##### 6. What is Async and await ?
+##### 7. What is Async and await ?
 
 **Async/await** is a feature in Dart that allows us to write asynchronous code that looks and
 behaves like synchronous code, making it easier to read.
@@ -82,7 +101,7 @@ expression.
 
 --------
 
-##### 7. What is Async*?
+##### 8. What is Async*?
 
 - **async*** gives you a Stream
 
@@ -91,14 +110,14 @@ result is wrapped in a Stream.
 
 --------
 
-##### 8. What is yeild?
+##### 9. What is yeild?
 
 **yield** adds a value to the output stream of the surrounding async* function. It's like return ,
 but does not terminate the function.
 
 --------
 
-##### 9. What is diff b/w  Async and Async* ?
+##### 10. What is diff b/w  Async and Async* ?
 
 - **async** gives you a Future
 - **async* ** gives you a Stream
@@ -111,7 +130,7 @@ result is wrapped in a Stream.
 
 --------
 
-##### 10. What is Event lopps?
+##### 11. What is Event lopps?
 
 The Event Loop is a mechanism that continuously checks and processes events and tasks in a loop,
 allowing Dart to handle asynchronous operations without blocking the main thread.
@@ -129,7 +148,7 @@ asynchronous operations effectively in Dart.
 
 --------
 
-##### 11. Diff b/w Future and Isolate?
+##### 12. Diff b/w Future and Isolate?
 
 A **Future** represents the result of an asynchronous operation, while an **Isolate** is a separate
 execution thread for parallel processing.
@@ -145,7 +164,7 @@ The key differences are:
 
 ------------
 
-##### 12. What will happen in background when you use Future?
+##### 13. What will happen in background when you use Future?
 
 When you use a Future in Dart, the asynchronous operation it represents is executed on a separate
 thread or event loop in the background. This allows the main thread (or UI thread in Flutter) to
@@ -160,7 +179,7 @@ The key points are:
 
 ------------
 
-##### 13. What is emit in Flutter?
+##### 14. What is emit in Flutter?
 
 **emits** function Null safety
 
