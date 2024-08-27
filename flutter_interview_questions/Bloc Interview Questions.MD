@@ -136,6 +136,68 @@ class AppState extends Equatable {
 }
 
 ```
+------------
+
+`BlocConsumer` is a Flutter widget that provides a convenient way to listen to BLoC (Business Logic Component) state changes and rebuild parts of the UI accordingly. It combines the functionality of `BlocBuilder` and `BlocListener`, allowing you to handle state updates and side effects within a single widget.
+
+### Attributes of `BlocConsumer`
+
+1. **`bloc`**: 
+   - **Type**: `Bloc`
+   - **Description**: The `bloc` attribute is where you provide the BLoC instance that the `BlocConsumer` will listen to and interact with. This is the BLoC that will emit states and receive events.
+
+2. **`builder`**:
+   - **Type**: `Widget Function(BuildContext context, S state)`
+   - **Description**: The `builder` function is responsible for building the UI based on the current state of the BLoC. It is called every time the BLoC emits a new state. The `builder` receives the `BuildContext` and the current state as parameters and returns a widget tree.
+
+3. **`listener`**:
+   - **Type**: `void Function(BuildContext context, S state)`
+   - **Description**: The `listener` function is used for side effects that should occur in response to state changes but don't involve rebuilding the UI. This could include showing a snackbar, navigating to another screen, or performing any other action in response to a state change. It is called every time the BLoC emits a new state.
+
+4. **`listenWhen`**:
+   - **Type**: `bool Function(S previous, S current)`
+   - **Description**: The `listenWhen` function determines whether the `listener` function should be called based on the previous and current states. This can be used to optimize performance by only triggering side effects for specific state changes.
+
+5. **`buildWhen`**:
+   - **Type**: `bool Function(S previous, S current)`
+   - **Description**: The `buildWhen` function determines whether the `builder` function should be called based on the previous and current states. This can be used to control when the UI should be rebuilt, helping to optimize performance by preventing unnecessary rebuilds.
+
+### Example Usage
+
+Here's an example of how `BlocConsumer` might be used in a Flutter widget:
+
+```dart
+BlocConsumer<MyBloc, MyState>(
+  bloc: myBloc,
+  listener: (context, state) {
+    if (state is MyErrorState) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('An error occurred!')),
+      );
+    }
+  },
+  builder: (context, state) {
+    if (state is MyLoadingState) {
+      return CircularProgressIndicator();
+    } else if (state is MyLoadedState) {
+      return ListView.builder(
+        itemCount: state.items.length,
+        itemBuilder: (context, index) {
+          return ListTile(title: Text(state.items[index].name));
+        },
+      );
+    } else {
+      return Center(child: Text('Please wait...'));
+    }
+  },
+);
+```
+
+In this example:
+- `listener` displays a `SnackBar` when an error state occurs.
+- `builder` displays different widgets based on the current state (loading, loaded, or default).
+
+`BlocConsumer` is a powerful tool in Flutter's BLoC architecture, streamlining the process of managing state and handling side effects.
 
 ------------
 
