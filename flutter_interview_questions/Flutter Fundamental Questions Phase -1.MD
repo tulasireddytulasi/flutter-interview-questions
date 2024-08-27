@@ -174,3 +174,67 @@ The new features in 3.22 are below:
 - Platform View Performance Improvements (iOS): Smoother platform views on iOS.
 - Vertex AI for Firebase Dart SDK Preview: AI features for Dart and Flutter apps.
 - Google Mobile Ads SDK 5.0.1: Enhanced ad monetization features.
+
+------------
+
+##### 12. JIT (Just-In-Time) and AOT (Ahead-Of-Time) are two different compilation strategies used in Dart, each serving different purposes:
+
+### 1. **JIT (Just-In-Time) Compilation**
+
+- **When Used:** During development.
+- **How It Works:** Dart code is compiled to machine code at runtime, just before execution.
+- **Benefits:**
+  - **Hot Reload:** Enables fast development cycles by allowing you to inject changes into a running app without restarting it.
+  - **Interactive Debugging:** Provides better support for interactive debugging and detailed error messages.
+- **Drawbacks:**
+  - **Slower Startup:** Because the code is compiled at runtime, the initial startup can be slower.
+  - **Lower Performance:** Performance may be slightly lower compared to AOT due to the overhead of runtime compilation.
+
+### 2. **AOT (Ahead-Of-Time) Compilation**
+
+- **When Used:** For production builds.
+- **How It Works:** Dart code is compiled to native machine code before the app is run.
+- **Benefits:**
+  - **Faster Startup:** Since the code is already compiled, the app starts almost instantly.
+  - **Higher Performance:** Optimized machine code leads to better performance in the final product.
+  - **Reduced Size:** The compiled binary is smaller and more efficient.
+- **Drawbacks:**
+  - **No Hot Reload:** Slower development cycles since changes require a full rebuild and restart.
+  - **Less Debug Information:** Debugging is more challenging as there is less information available compared to JIT.
+
+### Summary
+
+- **JIT** is best for development, offering rapid iteration and debugging.
+- **AOT** is ideal for production, providing faster startup and optimized performance.
+
+------------
+
+##### 13. In Dart, as in other programming languages, **compile time** and **runtime** refer to different stages of a program's lifecycle, each involving distinct processes:
+
+### 1. **Compile Time**
+
+- **Definition:** Compile time is the phase during which the Dart code is translated into machine code or bytecode before the program is executed.
+- **Key Processes:**
+  - **Syntax Checking:** The compiler checks the code for syntax errors, ensuring that the code adheres to the language's rules.
+  - **Type Checking:** If types are specified, the compiler verifies that operations on variables are type-safe.
+  - **Code Optimization:** The compiler may optimize the code for performance or size, especially in AOT compilation.
+- **Outcome:** The code is transformed into a format that can be executed by the computer (e.g., machine code for AOT or bytecode for JIT).
+- **Errors Detected:** Syntax errors, type errors, and other static analysis issues are caught at compile time.
+
+### 2. **Runtime**
+
+- **Definition:** Runtime is the phase when the compiled code is executed on the device or platform.
+- **Key Processes:**
+  - **Execution:** The program runs, performing the operations defined in the code, such as calculations, I/O operations, or UI rendering.
+  - **Dynamic Behavior:** Variables are assigned values, functions are invoked, and interactions with external systems (like APIs or databases) occur.
+  - **Error Handling:** The program may encounter runtime errors (e.g., null references, out-of-bounds access, or exceptions) that need to be handled.
+- **Outcome:** The program produces results, interacts with users, and performs the tasks it was designed for.
+- **Errors Detected:** Runtime errors, such as logical errors, division by zero, null pointer exceptions, and other exceptions, are caught during execution.
+
+### Summary
+
+- **Compile Time:** The stage where the Dart code is checked and converted into a runnable format. Errors here are mostly syntax or type-related.
+- **Runtime:** The stage where the compiled code is executed. Errors here are related to the program's logic and environment, such as null references or exceptions.
+
+------------
+
