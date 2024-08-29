@@ -1,34 +1,10 @@
-// Find second largest number
-void secondBigNo() {
-  List<int> arr = [2, 4, 6, 3, 9, 1, 5, 7, 8, 22, 33, 56];
-
-  int maxNo = arr.first;
-  int secondMaxNo = -1;
-  int thirdMaxNo = -1;
-  int size = arr.length;
-
-  for (int i = 1; i < size; i++) {
-    if (maxNo < arr[i]) {
-      thirdMaxNo = secondMaxNo;
-      secondMaxNo = maxNo;
-      maxNo = arr[i];
-    } else if (secondMaxNo < arr[i] && arr[i] != maxNo) {
-      thirdMaxNo = secondMaxNo;
-      secondMaxNo = arr[i];
-    } else if (thirdMaxNo < arr[i] && arr[i] != secondMaxNo) {
-      thirdMaxNo = arr[i];
-    }
-  }
-
-  print("Big No: $maxNo, secondBigNo: $secondMaxNo, thirdBigNo: $thirdMaxNo");
-}
+// Find the maximum and minimum elements in an array
 
 // To find the maximum and minimum elements in an array in Dart,
 // you can use a straightforward approach by iterating through the array
 // and comparing each element. Here’s a Dart program to do that without using inbuilt methods:
 
 void main() {
-  secondBigNo();
   List<int> numbers = [5, 7, 2, 9, 1, 6, 3, 8, 4];
 
   // Initialize max and min with the first element of the array
