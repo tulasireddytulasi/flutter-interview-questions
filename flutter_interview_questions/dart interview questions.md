@@ -80,7 +80,7 @@ void main() {
 - `person1` and `person2` reference the same object in memory.
 - Changing the `name` using `person2` affects `person1` because both variables point to the same object.
 
-#### What is Deep Copy?
+#### 3. What is Deep Copy?
 
 A **deep copy** is a process in which a new object is created that is an exact replica of the original object, but with completely independent copies of all nested objects and fields. This means that any changes made to the deep copy do not affect the original object, and vice versa.
 
@@ -137,5 +137,132 @@ void main() {
   print(person2.name);  // Output: Doe
 }
 ```
+
+------------
+
+#### 4. What factory keyword in Dart?
+
+In Dart, the **`factory`** keyword is used to define a constructor that can return an instance of a class, which may or may not be a new object. It allows more flexibility compared to a regular constructor by enabling logic before deciding whether to create a new instance or return an existing one (e.g., for caching or singleton patterns).
+
+### Key Use Cases:
+1. **Control Instance Creation**: Return an existing instance (like a singleton) or decide which subclass to return.
+2. **Custom Initialization Logic**: Perform operations before creating the instance.
+
+### Example:
+```dart
+class Logger {
+  static final Logger _instance = Logger._internal();  // Singleton instance
+
+  factory Logger() {
+    return _instance;  // Always returns the same instance
+  }
+
+  Logger._internal();  // Private constructor
+}
+
+void main() {
+  var logger1 = Logger();
+  var logger2 = Logger();
+
+  print(logger1 == logger2);  // Output: true (both are the same instance)
+}
+```
+
+In this example, `Logger()` uses the `factory` constructor to always return the same instance, implementing the **singleton pattern**.
+
+------------
+
+
+#### 5. What are extension methods in Dart? How do they help improve code reusability and flexibility?
+
+**Extension methods in Dart** allow you to add new functionality to existing classes without modifying the original class or creating a subclass. You can "extend" classes like `String`, `List`, or even your own custom classes with additional methods.
+
+### Key Benefits:
+- **Improves code reusability**: You can add methods to frequently used classes, making the code cleaner and more reusable.
+- **Increases flexibility**: No need to modify or subclass existing classes, which is useful when working with third-party libraries.
+
+### Example:
+```dart
+extension StringExtension on String {
+  String reverse() => split('').reversed.join();
+}
+
+void main() {
+  print('hello'.reverse());  // Output: olleh
+}
+```
+
+This allows you to call `reverse()` on any `String` object without modifying the original `String` class.
+
+------------
+
+#### 6. What in Null Safety in Flutter? and its operators
+
+**Null Safety** in Dart (and thus Flutter) is a feature that ensures variables cannot contain `null` values unless explicitly allowed. This helps avoid common runtime errors like `null` dereferencing, making your code safer and more robust.
+
+##### Key Features:
+1. **Non-nullable by default**: Variables cannot hold `null` unless explicitly declared as nullable.
+2. **Nullable types**: Use a `?` to allow a variable to hold a `null` value.
+
+##### Null Safety Operators:
+1. **`?` (Nullable Type)**: Allows a variable to hold a `null` value.
+   ```dart
+   String? name;  // `name` can be null
+   ```
+   
+2. **`!` (Null Assertion)**: Asserts that a nullable variable is non-null at that point.
+   ```dart
+   String? name;
+   print(name!);  // Throws an error if `name` is null
+   ```
+
+3. **`??` (Null Coalescing)**: Provides a fallback value if the variable is `null`.
+   ```dart
+   String? name;
+   print(name ?? 'Unknown');  // Output: 'Unknown' if `name` is null
+   ```
+
+4. **`?.` (Null-aware Access)**: Safely accesses a property or method, only if the object is not `null`.
+   ```dart
+   String? name;
+   print(name?.length);  // Returns `null` if `name` is null
+   ```
+
+##### Example:
+```dart
+String? name = null;
+int length = name?.length ?? 0;  // Safely handles null and gives default value
+```
+
+##### Benefits:
+- Avoids `NullPointerExceptions`.
+- Helps catch potential null-related issues at compile-time.
+
+------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
