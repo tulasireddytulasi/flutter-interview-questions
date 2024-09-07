@@ -116,7 +116,7 @@ serialized/deserialized to ensure safe communication.
 
 ------------
 
-####5. What is Isolate.compute, Isolate.spawn, Isolate.run?
+#### 5. What is Isolate.compute, Isolate.spawn, Isolate.run?
 
 In Flutter, Isolates help in managing parallel tasks by running them in separate threads. Here's an explanation of the key concepts:
 
