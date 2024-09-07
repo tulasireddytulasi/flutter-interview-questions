@@ -24,8 +24,8 @@ multi-threading in Flutter using isolates:
    new isolate, you can use the Isolate.spawn() function. Data can be shared between isolates using
    message passing.
 
-Isolates are Dart's model for concurrent execution. Each isolate has its own memory heap and runs in
-its own thread. Isolates are lightweight and communicate with each other via message passing.
+   Isolates are Dart's model for concurrent execution. Each isolate has its own memory heap and runs in
+   its own thread. Isolates are lightweight and communicate with each other via message passing.
 
 2. **Compute Function**: Flutter provides a compute function, which runs a function in a separate
    isolate. This function is commonly used for performing CPU-bound tasks off the main UI thread to
