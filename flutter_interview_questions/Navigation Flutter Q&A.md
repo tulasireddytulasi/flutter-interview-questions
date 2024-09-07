@@ -229,4 +229,27 @@ This setup ensures direct navigation to specific content in your app through dee
 
 ---------------
 
+#### 6. Features of `go_router` Package
+
+Here are some key features of `go_router`:
+
+- **Declarative Routing**: Routes are defined in a declarative manner, allowing for more readable and maintainable code.
+
+- **Nested Routes**: Supports nested routing for complex navigation structures.
+
+- **Deep Linking**: Automatically handles deep linking and URL synchronization with the app’s navigation.
+
+- **Query Parameters**: Easily manages query parameters in URLs and integrates them into the route handling.
+
+- **Named Routes**: Supports named routes for easier navigation and route management.
+
+- **Redirects**: Allows for conditional redirects and route transformations.
+
+- **Custom Transitions**: Supports customizable page transitions for navigation.
+
+- **Error Handling**: Provides mechanisms to handle errors and 404 pages within the route configuration.
+
+- **GoRouterDelegate**: Leverages `GoRouterDelegate` for managing navigation state and handling route changes.
+
+---------------
 
