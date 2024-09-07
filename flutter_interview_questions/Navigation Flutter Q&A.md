@@ -253,3 +253,12 @@ Here are some key features of `go_router`:
 
 ---------------
 
+#### 7.What are the key concepts in Navigator 2.0, such as RouterDelegate, RouteInformationParser, and BackButtonDispatcher?
+
+Here are the key concepts in Navigator 2.0:
+
+- **RouterDelegate**: Manages the navigation stack and updates the UI based on the current route state.
+- **RouteInformationParser**: Parses route information from the URL to create route objects for navigation.
+- **BackButtonDispatcher**: Handles the back button navigation and manages the back navigation stack.
+
+------------
