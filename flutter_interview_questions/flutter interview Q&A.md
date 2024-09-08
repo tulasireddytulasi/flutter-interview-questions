@@ -6,14 +6,42 @@ this file contains a list of flutter interview questions with answers
  Flutter Interview Questions and Answers
 ---
 
-##### 1. What is WidgetsBinding.instance.addPostFrameCallback( ) and WidgetsFlutterBinding.ensureInitialized()  in Flutter?
+##### 1. What is the difference between main() function and the runApp() function in Flutter?
+
+In Dart, main() acts as the entry point for the program whereas runApp() attaches the given widget to the screen. The runApp() function takes the given Widget and makes it the root of the widget tree. In this example, the widget tree consists of two widgets, the Center widget and its child, the Text widget. The framework forces the root widget to cover the screen, which means the text “Hello, world” ends up centered on screen.
+
+------------
+
+##### 2. What is WidgetsBinding.instance.addPostFrameCallback( ) and WidgetsFlutterBinding.ensureInitialized()  in Flutter?
 
 - **WidgetsBinding.instance.addPostFrameCallback()** is used to schedule code execution after the next frame has been rendered.
 - **WidgetsFlutterBinding.ensureInitialized()** is used to initialize the Flutter engine before running any Flutter-related code.
 
 ------------
 
-##### 2. What are some commonly used SystemChrome methods in Flutter?
+#### 3. What is WidgetsBinding?
+
+- **WidgetsBinding**:
+  - WidgetsBinding is a class in Flutter that manages the lifecycle of a Flutter application.
+  - WidgetsBinding is responsible for initializing the application, setting up the event loop, and updating the UI.
+  - WidgetsBinding is not an isolate, but it is responsible for managing the UI thread.
+  - WidgetsBinding is responsible for updating the UI when the application state changes.
+  - WidgetsBinding is responsible for handling platform messages, which are messages sent from the native platform to the Flutter application.
+  - WidgetsBinding is responsible for handling platform messages, which are messages sent from the native platform to the Flutter application. 
+
+------------
+
+#### 4. How to know the app is in the foreground or background?
+
+1. Implement `WidgetsBindingObserver` in your StatefulWidget.
+2. Register the observer in `initState()`.
+3. Override `didChangeAppLifecycleState` to detect lifecycle changes.
+4. Check if the state is `resumed` (foreground) or `paused` (background).
+5. Remove the observer in `dispose()`.
+
+------------
+
+##### 5. What are some commonly used SystemChrome methods in Flutter?
 
 The **SystemChrome** class in Flutter provides a set of methods that allow you to interact with the system's user interface and control various aspects of the app's appearance and behavior. Here are some commonly used **SystemChrome** methods:
 
@@ -34,7 +62,7 @@ void setAppOrientation() {
 
 ------------
 
-##### 3. What is the Android lifecycle, Flutter lifecycle, and app lifecycle?
+##### 6. What is the Android lifecycle, Flutter lifecycle, and app lifecycle?
 
 - **Android lifecycle** refers to the different states an Android app can be in, such as Created, Started, Resumed, Paused, Stopped, and Destroyed. Developers need to handle these states to ensure their app behaves correctly.
 - **Flutter lifecycle** refers to the states a Flutter app goes through, which are similar to Android but with some differences. The main states are Inactive, Paused, Resumed, Detached, and Disposed.
@@ -42,7 +70,7 @@ void setAppOrientation() {
 
 ------------
 
-##### 4. What is a KeyedSubtree in Flutter?
+##### 7. What is a KeyedSubtree in Flutter?
 
 In Flutter, a **KeyedSubtree** is a utility widget that helps optimize the rendering and rebuilding process of complex widget trees. It is especially useful when dealing with lists or grids of widgets that need to be frequently rebuilt or reordered.
 
@@ -68,7 +96,7 @@ By using **KeyedSubtree**, Flutter can avoid unnecessarily rebuilding widgets th
 
 ------------
 
-##### 5. How do you call a method of Page 1 from Page 2, both being StatefulWidgets?
+##### 8. How do you call a method of Page 1 from Page 2, both being StatefulWidgets?
 
 1. On **Page1**, we define a method **showMessage** that we want to call from **Page2**.
 2. When navigating to **Page2**, we pass a reference to the **showMessage** method as a callback function.
@@ -77,13 +105,13 @@ By using **KeyedSubtree**, Flutter can avoid unnecessarily rebuilding widgets th
 
 ------------
 
-##### 6. What is the `dart:ffi` package, and what is it used for?
+##### 9. What is the `dart:ffi` package, and what is it used for?
 
 The **dart:ffi** package in Dart is used for Foreign Function Interface (FFI), which allows Dart code to call and interact with native code libraries (e.g., C, C++, Rust) written in other programming languages. It provides a way to bridge the gap between Dart and native code, enabling you to leverage existing native libraries or write high-performance code in languages like C/C++ while still using Dart for the main application logic.
 
 ------------
 
-##### 7. What is the command for creating a new Flutter project with a specific platform and language for each platform?
+##### 10. What is the command for creating a new Flutter project with a specific platform and language for each platform?
 
 To create a new Flutter project with a specific platform and language for each platform, you can use the **flutter create** command with the **--platforms** and **--language** options.
 The general command structure is:
@@ -104,7 +132,7 @@ If you don't specify the **--platforms** and **--language** options, Flutter wil
 
 ------------
 
-##### 8. What is the location of the local pub cache directory?
+##### 11. What is the location of the local pub cache directory?
 
 In Flutter, the local pub cache directory is where the packages you've downloaded are stored. The default location of the pub cache directory varies based on your operating system:
 
@@ -118,7 +146,7 @@ flutter pub cache
 
 ------------
 
-##### 1. Explain the following below:
+##### 12. Explain the following below:
 
 1. **Lifting State Up**: In Flutter, when multiple child widgets need to share data or state, it is often better to lift the state up to their closest common ancestor widget. This way, the parent widget can manage the state and pass the data down to the child widgets as needed, ensuring consistency and avoiding prop drilling.
 
