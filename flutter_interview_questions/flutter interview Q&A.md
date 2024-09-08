@@ -6,6 +6,118 @@ this file contains a list of flutter interview questions with answers
  Flutter Interview Questions and Answers
 ---
 
+##### 1. What is WidgetsBinding.instance.addPostFrameCallback( ) and WidgetsFlutterBinding.ensureInitialized()  in Flutter?
+
+- **WidgetsBinding.instance.addPostFrameCallback()** is used to schedule code execution after the next frame has been rendered.
+- **WidgetsFlutterBinding.ensureInitialized()** is used to initialize the Flutter engine before running any Flutter-related code.
+
+------------
+
+##### 2. What are some commonly used SystemChrome methods in Flutter?
+
+The **SystemChrome** class in Flutter provides a set of methods that allow you to interact with the system's user interface and control various aspects of the app's appearance and behavior. Here are some commonly used **SystemChrome** methods:
+
+1. **SystemChrome.setPreferredOrientations(List<DeviceOrientation> orientations):** This method allows you to set the preferred orientations for your app. For example, you can set it to **[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]** to lock the app in portrait mode.
+
+**Example:**
+
+```dart
+import 'package:flutter/services.dart';
+
+void setAppOrientation() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+}
+```
+
+------------
+
+##### 3. What is the Android lifecycle, Flutter lifecycle, and app lifecycle?
+
+- **Android lifecycle** refers to the different states an Android app can be in, such as Created, Started, Resumed, Paused, Stopped, and Destroyed. Developers need to handle these states to ensure their app behaves correctly.
+- **Flutter lifecycle** refers to the states a Flutter app goes through, which are similar to Android but with some differences. The main states are Inactive, Paused, Resumed, Detached, and Disposed.
+- **App lifecycle** generally refers to the different states any app can be in, such as foreground, background, active, inactive, and resumed.
+
+------------
+
+##### 4. What is a KeyedSubtree in Flutter?
+
+In Flutter, a **KeyedSubtree** is a utility widget that helps optimize the rendering and rebuilding process of complex widget trees. It is especially useful when dealing with lists or grids of widgets that need to be frequently rebuilt or reordered.
+
+By using **KeyedSubtree**, Flutter can avoid unnecessarily rebuilding widgets that have not changed, and instead focus on updating only the widgets that have been modified. This can significantly improve performance, especially in cases where the widget tree is large or complex, and frequent rebuilds are required.
+
+**Example:**
+
+```dart
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return KeyedSubtree(
+          key: ValueKey(items[index]), // Provide a unique key for each item
+          child: ListTile(
+            title: Text(items[index]),
+          ),
+        );
+      },
+    );
+```
+
+------------
+
+##### 5. How do you call a method of Page 1 from Page 2, both being StatefulWidgets?
+
+1. On **Page1**, we define a method **showMessage** that we want to call from **Page2**.
+2. When navigating to **Page2**, we pass a reference to the **showMessage** method as a callback function.
+3. On **Page2**, we receive the callback function through the constructor and store it in the **widget.callback** property.
+4. When the button is pressed on **Page2**, we call **widget.callback(),** which invokes the **showMessage** method of **Page1**.
+
+------------
+
+##### 6. What is the `dart:ffi` package, and what is it used for?
+
+The **dart:ffi** package in Dart is used for Foreign Function Interface (FFI), which allows Dart code to call and interact with native code libraries (e.g., C, C++, Rust) written in other programming languages. It provides a way to bridge the gap between Dart and native code, enabling you to leverage existing native libraries or write high-performance code in languages like C/C++ while still using Dart for the main application logic.
+
+------------
+
+##### 7. What is the command for creating a new Flutter project with a specific platform and language for each platform?
+
+To create a new Flutter project with a specific platform and language for each platform, you can use the **flutter create** command with the **--platforms** and **--language** options.
+The general command structure is:
+
+```dart
+flutter create --platforms=<platforms> --language=<language> <project_name>
+```
+Create a new Flutter project for Android and iOS, using Kotlin for Android and Swift for iOS:
+```dart
+flutter create --platforms=android,ios --language=kotlin,swift my_project
+```
+Create a new Flutter project for web and desktop (Windows, macOS, and Linux), using Dart for all platforms:
+
+```dart
+flutter create --platforms=web,windows,macos,linux --language=dart my_project
+```
+If you don't specify the **--platforms** and **--language** options, Flutter will create a project for all supported platforms using Dart as the default language.
+
+------------
+
+##### 8. What is the location of the local pub cache directory?
+
+In Flutter, the local pub cache directory is where the packages you've downloaded are stored. The default location of the pub cache directory varies based on your operating system:
+
+- Windows: %APPDATA%\Pub\Cache
+- macOS/Linux: $HOME/.pub-cache
+
+You can also find the location of the pub cache directory by running the following command in your terminal:
+```dart
+flutter pub cache
+```
+
+------------
+
 ##### 1. Explain the following below:
 
 1. **Lifting State Up**: In Flutter, when multiple child widgets need to share data or state, it is often better to lift the state up to their closest common ancestor widget. This way, the parent widget can manage the state and pass the data down to the child widgets as needed, ensuring consistency and avoiding prop drilling.
