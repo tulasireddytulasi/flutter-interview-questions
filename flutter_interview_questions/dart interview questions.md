@@ -240,7 +240,152 @@ int length = name?.length ?? 0;  // Safely handles null and gives default value
 
 ------------
 
+#### 7. Explain the advanced enum in Dart 2.17
 
+Here are single-line points explaining advanced enums in Dart:
+
+In **Dart 2.17**, enums were significantly enhanced to provide more flexibility and functionality. These advanced enums are much more powerful than traditional enums, allowing enums to hold data and have methods. Here’s a breakdown of the key features introduced:
+
+##### Key Features of Advanced Enums in Dart 2.17:
+
+1. **Enums with Fields**:
+   - Enums can now have properties/fields, allowing each enum value to hold additional data.
+   - Each enum value can store unique data for these fields.
+   - Example:
+     ```dart
+     enum Weather {
+       sunny(30),
+       rainy(20),
+       snowy(0);
+
+       final int temperature;
+
+       const Weather(this.temperature);
+     }
+
+     void main() {
+       print(Weather.sunny.temperature); // Output: 30
+     }
+     ```
+
+2. **Enums with Methods**:
+   - You can define methods within an enum, enabling more complex behavior associated with enum values.
+   - Example:
+     ```dart
+     enum Vehicle {
+       car,
+       bike,
+       bus;
+
+       void start() {
+         switch (this) {
+           case Vehicle.car:
+             print('Starting a car...');
+             break;
+           case Vehicle.bike:
+             print('Starting a bike...');
+             break;
+           case Vehicle.bus:
+             print('Starting a bus...');
+             break;
+         }
+       }
+     }
+
+     void main() {
+       Vehicle.car.start(); // Output: Starting a car...
+     }
+     ```
+
+3. **Enums with Named Constructors**:
+   - Enum constructors can be named, providing flexibility when initializing enum values.
+   - Example:
+     ```dart
+     enum Beverage {
+       coffee(price: 5),
+       tea(price: 3);
+
+       final int price;
+
+       const Beverage({required this.price});
+     }
+
+     void main() {
+       print(Beverage.coffee.price); // Output: 5
+     }
+     ```
+
+4. **Interfaces and Mixins in Enums**:
+   - Enums can implement interfaces and mixins, allowing enums to behave more like classes with advanced capabilities.
+   - Example:
+     ```dart
+     abstract class Drivable {
+       void drive();
+     }
+
+     enum Vehicle implements Drivable {
+       car,
+       bike;
+
+       @override
+       void drive() {
+         print('$this is being driven.');
+       }
+     }
+
+     void main() {
+       Vehicle.car.drive(); // Output: Vehicle.car is being driven.
+     }
+     ```
+
+5. **Enum Index and Name Properties**:
+   - Enums automatically get a `name` and `index` property.
+   - `index`: The position of the enum value in the declaration (starting from 0).
+   - `name`: The string representation of the enum value's name.
+   - Example:
+     ```dart
+     enum Color {
+       red,
+       green,
+       blue,
+     }
+
+     void main() {
+       print(Color.red.index); // Output: 0
+       print(Color.green.name); // Output: green
+     }
+     ```
+
+6. **Enum with Static Methods**:
+   - Enums can contain static methods to provide additional functionality.
+   - Example:
+     ```dart
+     enum DaysOfWeek {
+       monday,
+       tuesday,
+       wednesday;
+
+       static DaysOfWeek getDayByIndex(int index) {
+         return DaysOfWeek.values[index];
+       }
+     }
+
+     void main() {
+       print(DaysOfWeek.getDayByIndex(1)); // Output: DaysOfWeek.tuesday
+     }
+     ```
+
+##### Summary of Advanced Enum Features:
+- **Fields**: Each enum value can hold associated data.
+- **Methods**: Enum values can have methods to define behavior.
+- **Named Constructors**: Provides flexibility in initializing enum values.
+- **Interfaces and Mixins**: Enums can implement interfaces for more complex behavior.
+- **Properties**: Enums have `index` and `name` by default.
+- **Static Methods**: Static utility methods can be added to enums.
+
+These advanced enums make enums in Dart far more versatile and closer to the functionality you’d expect from full-fledged classes.
+
+------------
 
 
 

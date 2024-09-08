@@ -118,7 +118,8 @@ but does not terminate the function.
 --------
 
 ##### 10. What is `sync` & `async` in Dart?
-synchronous operation: A synchronous operation blocks other operations from executing until it completes. synchronous function: A synchronous function only performs synchronous operations. asynchronous operation: Once initiated, an asynchronous operation allows other operations to execute before it completes.
+- **Synchronous operation:** A synchronous operation blocks other operations from executing until it completes. synchronous function: A synchronous function only performs synchronous operations. 
+- **Asynchronous operation:** Once initiated, an asynchronous operation allows other operations to execute before it completes.
 
 --------
 
@@ -131,7 +132,7 @@ Async/Await is used to work with promises in asynchronous functions. It is basic
 ##### 12. What is diff b/w  Async and Async* ?
 
 - **async** gives you a Future
-- **async* ** gives you a Stream
+- **async*** gives you a Stream
 
 **Async** functions execute synchronously until they reach the await keyword. Therefore, all
 synchronous code within an async function body executes immediately.
