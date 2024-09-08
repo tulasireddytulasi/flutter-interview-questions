@@ -6,6 +6,28 @@ this file contains a list of flutter interview questions with answers
  Flutter Interview Questions and Answers
 ---
 
+##### 1. Explain the following below:
+
+1. **Lifting State Up**: In Flutter, when multiple child widgets need to share data or state, it is often better to lift the state up to their closest common ancestor widget. This way, the parent widget can manage the state and pass the data down to the child widgets as needed, ensuring consistency and avoiding prop drilling.
+
+2. **InheritedWidget**: The `InheritedWidget` is a special type of widget that enables data to be efficiently passed down the widget tree to any descendant widgets that depend on it. It is useful for passing data that needs to be shared among multiple widgets without having to manually pass it down through each level of the tree.
+
+3. **ValueListenableBuilder**: The `ValueListenableBuilder` is a widget that rebuilds itself whenever the value of a `ValueListenable` object changes. It is useful for creating widgets that depend on data that can change over time, such as data from a `ChangeNotifier` or a `ValueNotifier`.
+
+4. **ClipRRect**: The `ClipRRect` widget is used to clip a rectangular area from a child widget. It can be used to create rounded corners, circles, or any other shape that can be described by a rectangular clip.
+
+5. **SliverAppBar**: The `SliverAppBar` is a widget that can be used in a `CustomScrollView` to create an app bar that can be pinned, floating, or snapping. It is designed to work seamlessly with other slivers in a scrolling view.
+
+6. **FittedBox**: The `FittedBox` is a widget that scales and positions its child widget to fit within its available space. It can be useful for displaying content that may be larger or smaller than the available space, such as images or text.
+
+7. **CustomPaint**: The `CustomPaint` widget allows you to draw custom graphics directly onto the canvas using a `CustomPainter` class. It is useful for creating complex shapes, animations, or visualizations that cannot be easily achieved with the built-in Flutter widgets.
+
+8. **TweenAnimationBuilder**: The `TweenAnimationBuilder` is a widget that builds a widget based on the value of an animation. It is useful for creating custom animations by providing a builder function that returns a widget based on the current value of the animation.
+
+9. **FFI (Foreign Function Interface) in Dart**: FFI in Dart allows you to call native code (C, C++, Rust, etc.) from Dart and vice versa. It provides a way to interact with platform-specific libraries and APIs that are not available in Dart's standard library. This feature can be useful for tasks like accessing low-level system functionality, hardware peripherals, or leveraging existing native libraries.
+
+---
+
 1.what is difference between BLOC, Provider and GetX, RiverPod?
 
 GetX  | Riverpod | Provider | BLoC
@@ -422,6 +444,8 @@ for more details: https://docs.flutter.dev/resources/faq
 Widget testing tool is real devices or emulators.
 
 ---
+
+
 
 
 
