@@ -117,7 +117,18 @@ but does not terminate the function.
 
 --------
 
-##### 10. What is diff b/w  Async and Async* ?
+##### 10. What is `sync` & `async` in Dart?
+synchronous operation: A synchronous operation blocks other operations from executing until it completes. synchronous function: A synchronous function only performs synchronous operations. asynchronous operation: Once initiated, an asynchronous operation allows other operations to execute before it completes.
+
+--------
+
+##### 11. Which is better `promise` or `await`?
+
+Async/Await is used to work with promises in asynchronous functions. It is basically syntactic sugar for promises. It is just a wrapper to restyle code and make promises easier to read and use. It makes asynchronous code look more like synchronous/procedural code, which is easier to understand.
+
+--------
+
+##### 12. What is diff b/w  Async and Async* ?
 
 - **async** gives you a Future
 - **async* ** gives you a Stream
@@ -130,7 +141,7 @@ result is wrapped in a Stream.
 
 --------
 
-##### 11. What is Event lopps?
+##### 13. What is Event lopps?
 
 The Event Loop is a mechanism that continuously checks and processes events and tasks in a loop,
 allowing Dart to handle asynchronous operations without blocking the main thread.
@@ -148,7 +159,7 @@ asynchronous operations effectively in Dart.
 
 --------
 
-##### 12. Diff b/w Future and Isolate?
+##### 14. Diff b/w Future and Isolate?
 
 A **Future** represents the result of an asynchronous operation, while an **Isolate** is a separate
 execution thread for parallel processing.
@@ -164,7 +175,7 @@ The key differences are:
 
 ------------
 
-##### 13. What will happen in background when you use Future?
+##### 15. What will happen in background when you use Future?
 
 When you use a Future in Dart, the asynchronous operation it represents is executed on a separate
 thread or event loop in the background. This allows the main thread (or UI thread in Flutter) to
@@ -179,7 +190,7 @@ The key points are:
 
 ------------
 
-##### 14. What is emit in Flutter?
+##### 16. What is emit in Flutter?
 
 **emits** function Null safety
 

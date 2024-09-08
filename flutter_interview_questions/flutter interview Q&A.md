@@ -176,36 +176,11 @@ The structure of Flutter consists of three layers:
 
 <img src='https://github.com/tulasireddytulasi/flutter-interview-questions/blob/main/img/flutter_images/flutter_architecture.jpg' alt="async"/>
 
-`Upper layers`: The Dart-based platform that takes care of app widgets, gestures, animations, illustrations, and materials;
-`Flutter engine`: Handles the display and formatting of text.
-`Built-in service`: Used for the management of plugins, packages, and event loops.
+- `Upper layers`: The Dart-based platform that takes care of app widgets, gestures, animations, illustrations, and materials;
+- `Flutter engine`: Handles the display and formatting of text.
+-  `Built-in service`: Used for the management of plugins, packages, and event loops.
 
 for more details: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-
----
-
-15.what are the new changes in flutter latest version?
-
-The latest Flutter version is 3.3
-Rendering Layer Changes in Flutter 3.3.
-
-The Flutter team introduced a new rendering layer named Impeller with the Flutter upgrade. This runtime is able to maximize the performance of hardware-accelerated APIs like Vulkan for Android or Metal for iOS.
-
-##### Framework Changes in Flutter 3.3
-
-Global Selection, Text Input, Scribble, Trackpad Input, Material Design 3, Trackpad Input, Chip, IconButton and Medium and large AppBar.
-
-##### Package Changes in Flutter 3.3
-
-`go_router`: since the release of the go-router package, things have become a little bit clearer. The Flutter Team is in charge of overseeing the package, and it makes it way simpler to handle and navigate the deep links by offering a declarative, URL-based API.
-
-##### Desktop Changes in Flutter 3.3
-
-`Windows`: Previously, developers had to change the Flutter desktop app version from a file that was specific to Windows apps. With the Flutter update, you can now easily change the app versions from the project's build arguments and pubspec.yaml files.
-
-When you push an app update, this feature enables auto-update, so that end users get it at the earliest.
-
-for more details: https://radixweb.com/blog/what-is-new-in-flutter-3-3-update#flutter
 
 ---
 
@@ -248,30 +223,6 @@ The lifecycle of the Flutter App is the show of how the application will change 
 22.Why is `null safe` in Flutter?
 
 Null safety prevents errors that result from unintentional access of variables set to null . For example, if a method expects an integer but receives null , your app causes a runtime error. This type of error, a null dereference error, can be difficult to debug.
-
----
-
-23.What is `sync` & `async` in Dart?
-
-synchronous operation: A synchronous operation blocks other operations from executing until it completes. synchronous function: A synchronous function only performs synchronous operations. asynchronous operation: Once initiated, an asynchronous operation allows other operations to execute before it completes.
-
----
-
-24.What is `Yield *` In Flutter?
-
-yield adds a value to the output stream of the surrounding async* function. It's like return , but doesn't terminate the function.
-
----
-
-25.Which is better `promise` or `await`?
-
-Async/Await is used to work with promises in asynchronous functions. It is basically syntactic sugar for promises. It is just a wrapper to restyle code and make promises easier to read and use. It makes asynchronous code look more like synchronous/procedural code, which is easier to understand.
-
----
-
-26.What does `async *` mean in Dart?
-
-Dart Async is related to asynchronous programming. It executes the asynchronous operation in a thread. It ensures that the critical functions to be executed until completion. The asynchronous operation is executed, separately the main application thread.
 
 ---
 
@@ -348,34 +299,9 @@ Divide
 
 ---
 
-38.What is difference between `async` and `async *` In Flutter?
-
-Async functions execute synchronously until they reach the `await` keyword. Therefore, all synchronous code within an async function body executes immediately. `Async*` is used to create a function that returns a bunch of future values one at a time. Each result is wrapped in a Stream.
-
----
-
-39.What is `sync` & `async` in Dart?
-synchronous operation: A synchronous operation blocks other operations from executing until it completes. synchronous function: A synchronous function only performs synchronous operations. asynchronous operation: Once initiated, an asynchronous operation allows other operations to execute before it completes.
-
----
-
-40: What is `emit` in Flutter?
-
-`emits` function Null safety
-
-Returns a StreamMatcher for matcher . If matcher is already a StreamMatcher, it's returned as-is. If it's any other Matcher, this matches a single event that matches that matcher. If it's any other Object, this matches a single event that's equal to that object.
-
----
-
 41.Why are StatefulWidget and state separate classes Flutter?
 
 Widgets are immutable. Since StatefulWidget extends Widget it therefore must be immutable too. Splitting the declaration into two classes allows both StatefulWidget to be immutable and State to be mutable.
-
----
-
-42.Why we use `mixin` in Dart?
-
-A mixin is a class with methods and properties utilized by other classes in Dart. It is a way to reuse code and write code clean. Mixins, in other words, are regular classes from which we can grab methods (or variables) without having to extend them.
 
 ---
 

@@ -177,3 +177,148 @@ In Dart, both **abstract classes** and **interfaces** are used to define structu
 | **Usage**                  | Used for partial implementation         | Used for enforcing method signatures    |
 
 In summary, abstract classes in Dart are used when you want to provide partial implementation and inheritance, while interfaces (using `implements`) enforce that all methods are implemented in the class, promoting flexibility through multiple interface implementations.
+
+------------
+
+#### 3. Why we use `mixin` in Dart?
+
+A mixin is a class with methods and properties utilized by other classes in Dart. It is a way to reuse code and write code clean. Mixins, in other words, are regular classes from which we can grab methods (or variables) without having to extend them.
+
+##### Usage:
+- **Code Reusability:** Mixins allow you to reuse code across multiple classes.
+- **Flexibility:** They provide a way to add functionality to a class without using inheritance.
+- **Interface Implementation:** Mixins can be used to implement interfaces.
+
+##### Example:
+
+```dart 
+mixin Flyable {
+  void fly() {
+    print("Flying");
+  }
+}
+
+class Bird with Flyable {}  
+
+void main() {
+  Bird bird = Bird();
+  bird.fly(); // Outputs: Flying
+}
+```
+
+In this example, the `Flyable` mixin is used to add the `fly` method to the `Bird` class.
+
+------------
+
+#### 4. What is `extends` and `implements` in Dart?
+
+In Dart, both `extends` and `implements` are used to create class inheritance and interface implementation, respectively. However, they serve different purposes and have different implications:
+
+##### `extends`:
+- **Usage:** Used to create a subclass that inherits from a superclass.
+- **Purpose:** Allows the subclass to inherit all non-private properties and methods from the superclass.
+
+##### `implements`:
+- **Usage:** Used to implement an interface in a class.
+- **Purpose:** Forces the class to implement all methods and properties defined in the interface.
+
+##### Example:
+
+```dart
+class Animal {
+  void sound() {
+    print("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  @override 
+  void sound() {
+    print("Bark");
+  }
+}
+
+class Bird implements Animal {
+  @override
+  void sound() {  
+    print("Tweet");
+  }
+}
+```
+
+In this example:
+- `Dog` extends `Animal`, inheriting its `sound` method.
+- `Bird` implements `Animal`, requiring it to provide its own implementation of the `sound` method. 
+
+------------
+
+#### 5. What is `is` and `as` in Dart?
+
+In Dart, both `is` and `as` are operators used for type checking and type casting, respectively.
+
+##### `is`:
+- **Usage:** Used to check if an object is of a specific type.
+- **Purpose:** Returns `true` if the object is of the specified type, otherwise `false`.
+
+##### `as`:
+- **Usage:** Used to cast an object to a specific type.
+- **Purpose:** Allows you to treat an object as if it is of a different type.
+
+##### Example:
+
+```dart
+class Animal {} 
+class Dog extends Animal {}
+
+void main() {
+  Animal animal = Dog();
+  if (animal is Dog) {
+    print("animal is a Dog");
+  }
+}
+
+```
+
+In this example:
+- `animal is Dog` checks if `animal` is an instance of `Dog`.
+- `animal as Dog` casts `animal` to `Dog`.
+
+------------
+
+#### 6. What is `super` in Dart?
+
+In Dart, `super` is a keyword used to refer to the parent class of a subclass. It is primarily used in subclass constructors to call the constructor of the superclass.
+
+##### Usage:
+- **Constructor:** Used to call the constructor of the superclass.
+- **Method:** Used to call methods of the superclass.
+- **Variable:** Used to refer to variables of the superclass.
+
+##### Example:
+
+```dart
+class Animal {
+  String name;  
+
+  Animal(this.name);
+
+  void display() {
+    print("Animal name: $name");
+  }
+}
+
+class Dog extends Animal {
+  Dog(String name) : super(name);
+}
+
+void main() {
+  Dog dog = Dog("Buddy");
+  dog.display(); // Outputs: Animal name: Buddy
+}
+``` 
+
+In this example:
+- `super(name)` calls the constructor of the superclass `Animal` with the `name` parameter.
+- `super.display()` calls the method `display` of the superclass `Animal`.
+
+------------
