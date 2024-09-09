@@ -18,7 +18,7 @@ Here are some strategies to optimize the performance of your Flutter app:
 
 ------------
 
-##### 6. What is tree shaking and how to implement in code?
+##### 2. What is tree shaking and how to implement in code?
 
 Tree shaking is a process in Flutter that removes unused code from the final compiled application.
 It analyzes the codebase, identifies the parts that are not being used, and trims them away,
