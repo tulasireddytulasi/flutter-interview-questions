@@ -18,7 +18,20 @@ Here are some strategies to optimize the performance of your Flutter app:
 
 ------------
 
-##### 2. What are secure coding techniques in Flutter?
+##### 6. What is tree shaking and how to implement in code?
+
+Tree shaking is a process in Flutter that removes unused code from the final compiled application.
+It analyzes the codebase, identifies the parts that are not being used, and trims them away,
+resulting in a smaller application size and improved performance. To implement tree shaking, you
+need to follow best practices, such as:
+
+- Using code splitting and lazy loading to load code only when needed.
+- Avoiding importing unnecessary libraries or packages.
+- Enabling tree shaking in the build configuration for release builds.
+
+--------
+
+##### 3. What are secure coding techniques in Flutter?
 
 Here are secure coding techniques in Flutter:
 
@@ -35,7 +48,7 @@ Here are secure coding techniques in Flutter:
 
 ------------
 
-##### 3. Difference between encryption and hashing?
+##### 4. Difference between encryption and hashing?
 
 Encryption and hashing are two different cryptographic techniques used for different purposes:
 
@@ -62,7 +75,7 @@ In summary, encryption is used to protect data confidentiality during transmissi
 
 ------------
 
-##### 4. Explain about Common Encryption Algorithms like AES, DES, RSA, and MD5, SHA-256, SHA-3
+##### 5. Explain about Common Encryption Algorithms like AES, DES, RSA, and MD5, SHA-256, SHA-3
 
 Here’s a brief overview of common encryption algorithms used in security:
 
@@ -109,7 +122,7 @@ Here’s a brief overview of common encryption algorithms used in security:
 
 ------------
 
-##### 5. What is KeyStore and KeyChain? and its usecases
+##### 6. What is KeyStore and KeyChain? and its usecases
 
 ##### **KeyStore (Android)**
 - **Definition:** A system service in Android that securely stores cryptographic keys, ensuring they are protected from unauthorized access.
@@ -133,7 +146,7 @@ Both KeyStore and KeyChain help in securing sensitive information by providing a
 
 ------------
 
-##### 6. What is the purpose of using HTTPS instead of HTTP?
+##### 7. What is the purpose of using HTTPS instead of HTTP?
 
 HTTPS (Hyper Text Transfer Protocol Secure) is a protocol for secure communication over the internet. It is used to ensure that data is transmitted securely and privately between a web server and a client (e.g., a browser). Here are the key reasons why HTTPS is preferred over HTTP:  
 
