@@ -395,7 +395,7 @@ These advanced enums make enums in Dart far more versatile and closer to the fun
 4. **async** – Used for asynchronous functions or methods.
 5. **await** – Used to pause execution until a `Future` is completed in an `async` function.
 6. **break** – Exits a loop or switch statement.
-6. **base** – The base keyword in Dart is used to mark a class as extendable by direct subclasses but prevents further inheritance beyond them.
+6. **base** – Used to mark a class as extendable by direct subclasses but prevents further inheritance beyond them.
 7. **case** – Used in a `switch` statement to define different cases.
 8. **catch** – Used to handle exceptions in a `try-catch` block.
 9. **class** – Defines a class.
