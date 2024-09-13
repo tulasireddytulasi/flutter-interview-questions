@@ -1,6 +1,7 @@
 import 'dart:isolate';
 import 'dart:io';
 import 'dart:convert';
+import 'dart:math';
 
 void main(List<String> args) async {
   do {
@@ -19,6 +20,7 @@ void main(List<String> args) async {
 }
 
 Future<String> getMessage(String forGreeting) async {
+  print("Data: ${Random().nextInt(100)}");
   final rp = ReceivePort();
   Isolate.spawn(_communicator, rp.sendPort);
 

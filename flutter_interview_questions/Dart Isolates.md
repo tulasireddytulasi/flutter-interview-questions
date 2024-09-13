@@ -1,6 +1,8 @@
 # Flutter Multi-threading Concepts:
 
 ##### Some links:
+Explains about simple isolates, isolate communication, keeping an isolate Alive, JSON Downloading and Parsing with isolates and Spawning Isolates using a URI
+https://www.youtube.com/watch?v=efxJfoL9KyY
 
 https://chat.openai.com/c/f0f8270d-fd63-4fd5-90d0-b9c7fb7a3734
 
