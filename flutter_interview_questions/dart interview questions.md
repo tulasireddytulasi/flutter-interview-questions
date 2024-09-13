@@ -387,9 +387,75 @@ These advanced enums make enums in Dart far more versatile and closer to the fun
 
 ------------
 
+#### What are **Dart Keywords**:
 
+1. **abstract** – Used to define abstract classes that can't be instantiated directly.
+2. **as** – Used for type casting.
+3. **assert** – Used to make assertions for debugging purposes.
+4. **async** – Used for asynchronous functions or methods.
+5. **await** – Used to pause execution until a `Future` is completed in an `async` function.
+6. **break** – Exits a loop or switch statement.
+6. **base** – The base keyword in Dart is used to mark a class as extendable by direct subclasses but prevents further inheritance beyond them.
+7. **case** – Used in a `switch` statement to define different cases.
+8. **catch** – Used to handle exceptions in a `try-catch` block.
+9. **class** – Defines a class.
+10. **const** – Declares a compile-time constant value.
+11. **continue** – Skips the remaining code in a loop iteration and starts the next iteration.
+12. **covariant** – Specifies that a method parameter’s type can be overridden with a subtype.
+13. **default** – Defines the default case in a `switch` statement.
+14. **deferred** – Used for deferred loading of libraries.
+15. **do** – Defines the beginning of a `do-while` loop.
+16. **dynamic** – Represents a type that disables static type checking.
+17. **else** – Defines the alternative branch of an `if` statement.
+18. **enum** – Declares an enumeration.
+19. **export** – Exports functionality from a library.
+20. **extends** – Indicates inheritance of a class.
+21. **extension** – Adds new functionality to existing classes without modifying them.
+22. **external** – Declares that a function or variable will be provided outside of Dart.
+23. **factory** – Used to define a constructor that can return an instance or a subclass.
+24. **false** – Represents the boolean value `false`.
+25. **final** – Declares a variable that can only be set once.
+26. **finally** – Specifies code to execute after a `try` block, regardless of whether an exception was thrown.
+27. **for** – Starts a `for` loop.
+28. **Function** – Represents a function object.
+29. **get** – Defines a getter in a class.
+30. **if** – Starts an `if` conditional statement.
+31. **implements** – Indicates that a class implements an interface.
+32. **import** – Imports a library into the file.
+33. **in** – Used in a `for-in` loop to iterate over collections.
+34. **interface** – Not used in Dart; interfaces are defined using classes.
+35. **is** – Checks if an object is of a specific type.
+36. **late** – Allows for lazy initialization of non-nullable variables.
+37. **library** – Specifies a library name.
+38. **mixin** – Declares a mixin.
+39. **new** – Instantiates an object (optional in Dart 2).
+40. **null** – Represents the absence of a value.
+41. **on** – Used in `catch` clauses to specify exception types, or in mixin declarations.
+42. **operator** – Defines an operator overload for a class.
+43. **part** – Includes a part of a library.
+44. **required** – Marks a named parameter as required.
+45. **rethrow** – Re-throws the caught exception.
+46. **return** – Returns a value from a function or method.
+47. **set** – Defines a setter in a class.
+48. **show** – Limits the scope of an imported library.
+49. **static** – Declares a static class member.
+50. **super** – Refers to the superclass of a class.
+51. **switch** – Defines a switch statement.
+52. **sync** – Marks a generator function that returns an iterable.
+53. **this** – Refers to the current instance of a class.
+54. **throw** – Throws an exception.
+55. **true** – Represents the boolean value `true`.
+56. **try** – Starts a `try-catch` block to handle exceptions.
+57. **typedef** – Declares a function type alias.
+58. **var** – Declares a variable with automatic type inference.
+59. **void** – Specifies that a function doesn’t return a value.
+60. **while** – Starts a `while` loop.
+61. **with** – Implements mixin functionality in a class.
+62. **yield** – Pauses a generator function and returns a value.
 
+These keywords are integral to the Dart programming language and serve specific syntactic purposes in code.
 
+------------
 
 
 
