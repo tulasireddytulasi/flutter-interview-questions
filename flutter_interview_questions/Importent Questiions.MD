@@ -155,7 +155,7 @@ devices and platforms.
 
 ------------
 
-##### 2. What is dependency Injection in flutter and give example
+##### 2. What is dependency Injection in flutter and How many types are there?
 
 **Dependency Injection** (DI) is a software design pattern that allows you to decouple the creation
 and management of object dependencies from the objects themselves. In Flutter, DI is often used to
@@ -167,6 +167,69 @@ Object or Function is passed into the class. Create loosely coupled application.
 
 There are several ways to implement **Dependency Injection** in Flutter, but one common approach is
 to use a package like **get_it** or **injectable**.
+
+
+**Types of Dependency Injection in Flutter:**
+
+There are several ways to implement dependency injection in Flutter. I’ll cover three common approaches:
+
+1. Constructor Injection: Dependencies are injected through a class’s constructor.
+2. Setter Injection: Dependencies are injected using setter methods.
+3. Provider Injection: Dependencies are provided using a global service locator.
+
+**Constructor Injection Example:**
+
+```dart
+class MyService {
+  final MyDependency dependency;
+
+  MyService(this.dependency);
+
+  void doSomething() {
+    dependency.performAction();
+  }
+}
+
+```
+In this example, `MyService` depends on `MyDependency`, and the dependency is injected via the constructor. This allows you to provide different implementations of `MyDependency` as needed.
+
+**Setter Injection Example:**
+
+```dart
+class MyService {
+  MyDependency dependency;
+
+  void setDependency(MyDependency newDependency) {
+    dependency = newDependency;
+  }
+
+  void doSomething() {
+    dependency.performAction();
+  }
+}
+
+```
+Here, the `MyService` class has a setter method to inject the dependency. You can change the dependency at runtime by calling `setDependency()`.
+
+**Provider Injection Example:**
+
+Provider injection uses a service locator to provide dependencies globally. A popular package for this in Flutter is `get_it`.
+
+```dart
+import 'package:get_it/get_it.dart';
+GetIt locator = GetIt.instance;
+void setupLocator() {
+  locator.registerSingleton<MyDependency>(MyDependencyImpl());
+}
+class MyService {
+  MyDependency dependency = locator<MyDependency>();
+  void doSomething() {
+    dependency.performAction();
+  }
+}
+
+```
+In this example, `get_it` is used to manage and provide dependencies. The `setupLocator()` function registers the dependency, and then it can be accessed from the `MyService` class using the locator.
 
 ------------
 
