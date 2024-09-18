@@ -173,9 +173,9 @@ to use a package like **get_it** or **injectable**.
 
 There are several ways to implement dependency injection in Flutter. I’ll cover three common approaches:
 
-1. Constructor Injection: Dependencies are injected through a class’s constructor.
-2. Setter Injection: Dependencies are injected using setter methods.
-3. Provider Injection: Dependencies are provided using a global service locator.
+1. **Constructor Injection**: Dependencies are injected through a class’s constructor.
+2. **Setter Injection**: Dependencies are injected using setter methods.
+3. **Provider Injection**: Dependencies are provided using a global service locator.
 
 **Constructor Injection Example:**
 
