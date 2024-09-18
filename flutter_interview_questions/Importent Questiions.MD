@@ -231,6 +231,9 @@ class MyService {
 ```
 In this example, `get_it` is used to manage and provide dependencies. The `setupLocator()` function registers the dependency, and then it can be accessed from the `MyService` class using the locator.
 
+For More Details: 
+https://techdynasty.medium.com/dependency-injection-in-flutter-0f308870d1a5
+
 ------------
 
 ##### 3. How to Implement Flavours in Flutter?
