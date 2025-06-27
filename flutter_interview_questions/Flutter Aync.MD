@@ -75,6 +75,17 @@ of a Future. It can be used to run asynchronous functions and update the user in
 on the function's output. FutureBuilder can also eliminate the need for manual management of Future
 states, such as handling loading indicators or error messages.
 
+---
+
+##### 6. what are different states of Futurebuilder:
+
+**FutureBuilder in Flutter** uses `ConnectionState` to track the status of a `Future`. The main states are:
+
+* **none**: No Future assigned yet. Can show initialData or nothing.
+* **waiting**: Future is running. Ideal for showing a loading spinner.
+* **active**: Rare with Futures, more common in Streams. Data is coming but not complete.
+* **done**: Future is completed. You can display data or handle errors using `snapshot`.
+
 --------
 
 ##### 7. What is Async and await ?
@@ -142,7 +153,7 @@ result is wrapped in a Stream.
 
 --------
 
-##### 13. What is Event lopps?
+##### 13. What is Event loops?
 
 The Event Loop is a mechanism that continuously checks and processes events and tasks in a loop,
 allowing Dart to handle asynchronous operations without blocking the main thread.

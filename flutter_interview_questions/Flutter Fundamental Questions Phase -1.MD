@@ -106,6 +106,8 @@ need to follow best practices, such as:
 - Avoiding importing unnecessary libraries or packages.
 - Enabling tree shaking in the build configuration for release builds.
 
+CMD: flutter build apk --release --tree-shake-icons
+
 --------
 
 ##### 7. What is Dev tools?
