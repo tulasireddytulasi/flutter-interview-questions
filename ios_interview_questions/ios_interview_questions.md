@@ -1,4 +1,5 @@
 Got it 👍 I’ll prepare **short, interview-focused answers** for each topic so you can revise quickly and confidently.
+
 Swift Language
 ---
 
@@ -73,4 +74,75 @@ Swift Language
 * **async/await** → Modern Swift concurrency model. Makes async code look synchronous and easier to read.
 
 ---
+
+## iOS Fundamentals
+
+Perfect 👌 Here are **short, crisp interview-style answers** for iOS Fundamentals:
+
+---
+
+### **1. App Lifecycle (UIKit & SwiftUI differences)**
+
+* **UIKit (AppDelegate + SceneDelegate):**
+
+    * `didFinishLaunching` → App started.
+    * `sceneDidBecomeActive` → App is active.
+    * `sceneWillResignActive` → Moving to inactive.
+    * `sceneDidEnterBackground` → App in background.
+* **SwiftUI:**
+
+    * No AppDelegate by default. Uses `@main` with `App` protocol.
+    * Lifecycle managed by `Scene` → `WindowGroup`.
+    * App state changes can be tracked using `@Environment(\.scenePhase)`.
+
+---
+
+### **2. ViewController Lifecycle**
+
+1. `init(coder:) / loadView()` – Load view.
+2. `viewDidLoad()` – Called once, good for setup.
+3. `viewWillAppear()` – Before appearing on screen.
+4. `viewDidAppear()` – Fully visible.
+5. `viewWillDisappear()` – Before leaving screen.
+6. `viewDidDisappear()` – Fully off screen.
+7. `deinit` – Cleanup memory.
+
+---
+
+### **3. Storyboard vs Programmatic UI vs SwiftUI**
+
+* **Storyboard:** Drag-and-drop UI. Easy to start, but harder to maintain in large teams.
+* **Programmatic UI:** Full control via code. More flexible, better for version control.
+* **SwiftUI:** Declarative syntax. UI updates automatically when state changes. Faster to prototype and reactive.
+
+---
+
+### **4. Target-Action, Delegates, Notifications, KVO**
+
+* **Target-Action:** One-to-one. Example: button tap → method call.
+* **Delegates:** One-to-one. Custom protocol where one object delegates responsibility to another.
+* **Notifications:** One-to-many. Broadcast message via `NotificationCenter`.
+* **KVO (Key-Value Observing):** Observes property changes on objects. (Mostly replaced by Combine/SwiftUI).
+
+---
+
+### **5. AutoLayout & Constraints**
+
+* AutoLayout is Apple’s system to create responsive UI across devices.
+* Defines relationships between views using **constraints** (leading, trailing, top, bottom, height, width).
+* Can be applied via Storyboard, programmatically (`NSLayoutConstraint`), or with libraries like SnapKit.
+
+---
+
+### **6. App States (Active, Background, Suspended)**
+
+* **Not Running** → App not launched or terminated.
+* **Inactive** → Running but not receiving events (like during phone call).
+* **Active** → Foreground, receiving events.
+* **Background** → Running tasks in background (e.g. location, music).
+* **Suspended** → In memory, no code execution. Quickly resumes to Active.
+
+---
+
+
 
