@@ -85,15 +85,15 @@ Perfect 👌 Here are **short, crisp interview-style answers** for iOS Fundament
 
 * **UIKit (AppDelegate + SceneDelegate):**
 
-    * `didFinishLaunching` → App started.
-    * `sceneDidBecomeActive` → App is active.
-    * `sceneWillResignActive` → Moving to inactive.
-    * `sceneDidEnterBackground` → App in background.
+  * `didFinishLaunching` → App started.
+  * `sceneDidBecomeActive` → App is active.
+  * `sceneWillResignActive` → Moving to inactive.
+  * `sceneDidEnterBackground` → App in background.
 * **SwiftUI:**
 
-    * No AppDelegate by default. Uses `@main` with `App` protocol.
-    * Lifecycle managed by `Scene` → `WindowGroup`.
-    * App state changes can be tracked using `@Environment(\.scenePhase)`.
+  * No AppDelegate by default. Uses `@main` with `App` protocol.
+  * Lifecycle managed by `Scene` → `WindowGroup`.
+  * App state changes can be tracked using `@Environment(\.scenePhase)`.
 
 ---
 
@@ -141,6 +141,56 @@ Perfect 👌 Here are **short, crisp interview-style answers** for iOS Fundament
 * **Active** → Foreground, receiving events.
 * **Background** → Running tasks in background (e.g. location, music).
 * **Suspended** → In memory, no code execution. Quickly resumes to Active.
+
+---
+
+##  Memory & Performance in iOS
+
+Great 👍 Here are **interview-ready answers** for **Memory & Performance in iOS**:
+
+---
+
+### **1. Strong Reference Cycles & Memory Leaks**
+
+* **Strong Reference Cycle:** Happens when two objects hold strong references to each other, preventing ARC from deallocating them.
+  Example:
+
+  * A `ViewController` strongly references a closure.
+  * Closure also strongly references `self`.
+* **Fix:** Use `[weak self]` or `[unowned self]` in closures, and `weak` for delegates.
+* **Memory Leak:** When objects never get released → app memory keeps growing → crash risk.
+
+---
+
+### **2. Instruments Usage (Leaks, Time Profiler)**
+
+* **Leaks Instrument:** Detects memory leaks, strong reference cycles. Helps find objects that stay in memory unexpectedly.
+* **Allocations:** Shows memory usage over time.
+* **Time Profiler:** Profiles CPU usage, identifies performance bottlenecks (e.g. heavy loops, blocking main thread).
+* Usage: Run app with Instruments → select tool → analyze memory/cpu traces → fix bottlenecks.
+
+---
+
+### **3. Lazy Loading & Caching**
+
+* **Lazy Loading:** Load resources only when needed. Reduces initial memory usage. Example:
+
+  ```swift
+  lazy var image = UIImage(named: "photo")
+  ```
+* **Caching:** Store already loaded data to reuse later (e.g. `NSCache`, image cache in `URLSession` or `Kingfisher`). Prevents repeated network/database calls.
+* Together → Improve memory + performance.
+
+---
+
+### **4. Optimizing Scrolling Performance (UITableView / UICollectionView)**
+
+* **Cell Reuse:** Use `dequeueReusableCell` to recycle cells instead of creating new ones.
+* **Asynchronous Work:** Offload heavy tasks (image loading, JSON parsing) to background queues.
+* **Batch Updates & Pagination:** Load data in chunks.
+* **Image Optimization:** Use caching, downscale images before rendering.
+* **Avoid AutoLayout Overhead:** Minimize deep view hierarchies, prefer stack views/constraints wisely.
+* **Pre-fetching:** Use `UITableViewDataSourcePrefetching` to prepare data before it appears.
 
 ---
 
