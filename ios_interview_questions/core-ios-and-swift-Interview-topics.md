@@ -108,3 +108,49 @@ Here’s a **structured guide** for your prep 👇
 
 ---
 
+#### IOS Main Concepts:
+
+####1. Swift Language Fundamentals:
+
+• **Struct** vs. **Class**: Differences between value and reference types, memory management implications.
+• Optionals: Explanation of optionals, unwrapping techniques (optional chaining, guard let, if let).
+• **Closures**: Understanding closures, capture lists, and the @escaping keyword.
+• **Protocols**: Usage and implementation of protocols, protocol-oriented programming.
+• **Memory Management (ARC):** How Automatic Reference Counting works, identifying and resolving retain cycles.
+
+####2. iOS Frameworks and Concepts:
+
+• **UIKit**: Understanding UIView, UIViewController, CALayer, UITableView, UICollectionView, and their lifecycle methods (viewDidLoad, viewDidAppear).
+• **Auto Layout**: Principles of Auto Layout, constraints, and adaptive layouts.
+• **Concurrency**: DispatchQueue, Grand Central Dispatch (GCD), synchronous vs. asynchronous tasks.
+• **Networking**: Fetching data from APIs, URLSession, Codable protocol for data parsing.
+• **Design Patterns**: MVC, MVVM, Coordinator pattern, Delegation.
+• **Core Data/Realm**: Data persistence mechanisms.
+• **Notifications**: NotificationCenter, local and remote notifications.
+
+#####3. Problem Solving and Algorithms:
+
+• **Algorithm Implementations**: Reversing a string, finding maximum values, removing duplicates from arrays, merging sorted arrays, checking for palindromes.
+• **Debugging and Performance Optimization**: Identifying and resolving crashes, memory leaks, performance issues, optimizing table view scrolling.
+• **Security**: Handling sensitive data, App Transport Security, Keychain usage.
+
+#####4. Architectural and Design Questions:
+
+• **App Architecture**: Discussing different architectural patterns and their suitability.
+• **Accessibility**: Making apps accessible for users with disabilities.
+• **Testing**: Unit testing, UI testing, and continuous integration.
+
+#### Main IOS Concepts:
+
+- **Swift Language Features**
+- **Memory Management**
+- **Concurrency & Grand Central Dispatch**
+- **UI/UX & Layout**
+- **Networking & Data Persistence**
+- **Design Patterns & Architecture**
+- **Debugging & Performance**
+- **Security**
+- **Algorithms & Data Structures**
+
+These GitHub repositories often provide not only the questions but also detailed answers and code examples, making them comprehensive preparation tools for iOS developers at all experience levels. 
+
